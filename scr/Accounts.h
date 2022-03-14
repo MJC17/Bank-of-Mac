@@ -9,10 +9,13 @@ using namespace std;
 class Account{
     string m_openDate;
     double m_balance;
-    double m_maxWithdrawl;
 public:
     Account();
-    Account(string date, double balance, double maxWithdrawl);
+    Account(string openDate, double balance);
+    void setOpenDate(string openDate){m_openDate = openDate;};
+    void setBalance(double balance){m_balance = balance;};
+    string getOpenDate(){return m_openDate;};
+    double getBalance(){return m_balance;};
     virtual void print() = 0;
 };
 

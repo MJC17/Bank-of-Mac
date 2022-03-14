@@ -93,6 +93,13 @@ build CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o: CXX_COMPILER__Bank_of_Ma
   OBJECT_DIR = CMakeFiles/Bank_of_Mac.dir
   OBJECT_FILE_DIR = CMakeFiles/Bank_of_Mac.dir/scr
 
+build CMakeFiles/Bank_of_Mac.dir/scr/Loan.cpp.o: CXX_COMPILER__Bank_of_Mac_Debug /Users/matthewarias/CLionProjects/Bank-of-Mac/scr/Loan.cpp || cmake_object_order_depends_target_Bank_of_Mac
+  DEP_FILE = CMakeFiles/Bank_of_Mac.dir/scr/Loan.cpp.o.d
+  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -mmacosx-version-min=11.2 -std=gnu++14
+  INCLUDES = -I/Users/matthewarias/CLionProjects/Bank-of-Mac/scr
+  OBJECT_DIR = CMakeFiles/Bank_of_Mac.dir
+  OBJECT_FILE_DIR = CMakeFiles/Bank_of_Mac.dir/scr
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Bank_of_Mac
@@ -101,7 +108,7 @@ build CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o: CXX_COMPILER__Bank_of_Ma
 #############################################
 # Link the executable Bank_of_Mac
 
-build Bank_of_Mac: CXX_EXECUTABLE_LINKER__Bank_of_Mac_Debug CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.o CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.o CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o
+build Bank_of_Mac: CXX_EXECUTABLE_LINKER__Bank_of_Mac_Debug CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.o CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.o CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o CMakeFiles/Bank_of_Mac.dir/scr/Loan.cpp.o
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -mmacosx-version-min=11.2
   OBJECT_DIR = CMakeFiles/Bank_of_Mac.dir
   POST_BUILD = :

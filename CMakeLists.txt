@@ -12,4 +12,4 @@ add_executable(Bank_of_Mac
         scr/Transaction.cpp
         scr/Transaction.h
         LICENSE
-        README.md)
+        README.md scr/Loan.h scr/Loan.cpp)
