@@ -15,3 +15,6 @@
 628	797	6689839900326112	Bank_of_Mac.exe	b491e961178b66a9
 >>>>>>> origin/main
 2	196	1647282671612530040	CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o	5aea70c8f526a4e8
+0	857	1647283826104439934	CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.o	8104b2677855bc64
+1	579	1647284012580182871	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.o	7a21dd852f7f38ca
+579	682	1647284012685054878	Bank_of_Mac	234071a881531c1c

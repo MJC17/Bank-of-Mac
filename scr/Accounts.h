@@ -9,11 +9,10 @@ using namespace std;
 class Account{
     string m_openDate;
     double m_balance;
-    double m_initialBalance;
     double m_maxWithdrawl;
 public:
-    Account()
-    Account(string date, double balance, double initialBalance, double maxWithdrawl);
+    Account();
+    Account(string date, double balance, double maxWithdrawl);
     virtual void print() = 0;
 };
 
