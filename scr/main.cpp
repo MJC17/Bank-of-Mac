@@ -11,7 +11,31 @@ int main() {
         cout<<"4) View transaction history"<<endl;
         cout<<"0) Quit"<<endl;
         cin>>choice;
+        if(choice == 1)
+        {
+            int secondChoice = 0;
+            cout<<""
+        }
+        else if(choice == 2)
+        {
 
+        }
+        else if(choice == 3)
+        {
+
+        }
+        else if(choice == 4)
+        {
+
+        }
+        else if(choice == 0)
+        {
+
+        }
+        else
+        {
+            cout<<"Thank you for banking with the Bank of Mac, have a great day!"<<endl;
+        }
     }while (choice!=0);
     return 0;
 }

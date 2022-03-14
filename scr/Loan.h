@@ -19,6 +19,12 @@ public:
     Loan(string openDate, double balance, double amountLoaned, string dueDate, double interestRate, double amountOwed);
     void setLoanAmount(double loanAmount){m_amountLoaned = loanAmount;};
     void setAmountOwed(double owing){m_amountOwed = owing;};
+    void setDueDate(string due){m_dueDate = due;};
+    void interestRate(double rate){m_interestRate = rate;};
+    double getInterestRate(){return m_interestRate;};
+    double getAmountOwed(){return m_amountOwed;};
+    string getDueDate(){return m_dueDate;};
+    double getAmountLoaned(){return m_amountLoaned;};
     void calculateInterest();
     void print();
 };
