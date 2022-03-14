@@ -1,5 +1,16 @@
 # ninja log v5
+<<<<<<< HEAD
 0	137	1647280731919716355	CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.o	8104b2677855bc64
 1	138	1647280731919716063	CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o	5aea70c8f526a4e8
 1	585	1647280732366992752	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.o	7a21dd852f7f38ca
 585	652	1647280732436858121	Bank_of_Mac	234071a881531c1c
+=======
+18	143	6689836323378453	CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.obj	6986c7db9fae2744
+0	149	6689836323438303	CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.obj	f66100e3d374f95a
+25	591	6689836327876091	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.obj	d17c34418d326bc2
+593	814	6689836330058986	Bank_of_Mac.exe	b491e961178b66a9
+4	501	6689837406030956	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.obj	d17c34418d326bc2
+502	693	6689837407876606	Bank_of_Mac.exe	b491e961178b66a9
+3	627	6689839898682489	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.obj	d17c34418d326bc2
+628	797	6689839900326112	Bank_of_Mac.exe	b491e961178b66a9
+>>>>>>> origin/main
