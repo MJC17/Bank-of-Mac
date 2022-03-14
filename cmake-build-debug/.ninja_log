@@ -1,0 +1,5 @@
+# ninja log v5
+0	137	1647280731919716355	CMakeFiles/Bank_of_Mac.dir/scr/Accounts.cpp.o	8104b2677855bc64
+1	138	1647280731919716063	CMakeFiles/Bank_of_Mac.dir/scr/Transaction.cpp.o	5aea70c8f526a4e8
+1	585	1647280732366992752	CMakeFiles/Bank_of_Mac.dir/scr/main.cpp.o	7a21dd852f7f38ca
+585	652	1647280732436858121	Bank_of_Mac	234071a881531c1c
