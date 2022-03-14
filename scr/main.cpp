@@ -14,7 +14,9 @@ int main() {
         if(choice == 1)
         {
             int secondChoice = 0;
-            cout<<""
+            cout<<"1) Checking account"<<endl;
+            cout<<"2) Saving account"<<endl;
+            cout<<
         }
         else if(choice == 2)
         {
