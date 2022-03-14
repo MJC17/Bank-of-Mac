@@ -4,15 +4,17 @@
 
 #ifndef BANK_OF_MAC_ACCOUNTS_H
 #define BANK_OF_MAC_ACCOUNTS_H
-
-
-\
-string m_openDate;
-    int m_balance;
-    int m_initialBalance;
+#include <iostream>
+using namespace std;
+class Account{
+    string m_openDate;
+    double m_balance;
+    double m_initialBalance;
+    double m_maxWithdrawl;
 public:
-    Accounts()
-    Accounts(string date, int balance, int initialBalance);
+    Account()
+    Account(string date, double balance, double initialBalance, double maxWithdrawl);
+    virtual void print() = 0;
 };
 
 
