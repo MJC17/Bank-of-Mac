@@ -6,8 +6,10 @@
 #define BANK_OF_MAC_ACCOUNTS_H
 
 
-class Accounts {
-
+class Accounts{
+    string openDate;
+    int balance;
+    int initialBalance;
 };
 
 
