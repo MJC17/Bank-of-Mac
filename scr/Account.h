@@ -9,30 +9,23 @@
 #include "Transaction.h"
 
 using namespace std;
-
+#include "BankClient.h"
+#include "Date.h"
 class Account {
 
 private:
-
-    string accountType;
-
-    string m_openDate;
-    int accountOpenDay;
+    string m_accountType;
+    Date m_openDate;
+    /*int accountOpenDay;
     int accountOpenMonth;
-    int accountOpenYear;
-
+    int accountOpenYear;*/
     double m_currentBalance;
-    int transactionsCount;
+    int m_transactionsCount;
     Transaction transactions[];
-
-
-
-
-
 public:
     Account();
-    Account(string openDate, double balance);
-
+    Account(string accountType, Date openDate, double balance);
+    virtual void printAccount();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H

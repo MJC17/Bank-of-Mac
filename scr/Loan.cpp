@@ -6,27 +6,21 @@ Loan::Loan()
 {
     m_amountLoaned = 0.0;
     m_interestRate = 0.0;
-    m_amountOwed = 0.0;
     m_dueDate = "";
 
 }
-Loan::Loan(string openDate, double balance, double amountLoaned, string dueDate, double interestRate, double amountOwed): Account(openDate, balance)
+Loan::Loan(double amountLoaned, string dueDate, double interestRate)
 {
     m_amountLoaned = amountLoaned;
     m_interestRate = interestRate;
     m_dueDate = dueDate;
-    m_amountOwed = amountOwed;
 }
-void Loan::calculateInterest()
+double Loan::calculateInterest()
 {
-    double total = Account::getBalance()*((m_interestRate/100)+1);
-    m_amountOwed = total;
+    double total = getAmountLoaned()*((getInterestRate()/100)+1);
+    return total;
 }
-void print()
+void Loan::printLoan()
 {
-    cout<<"Amount Loaned: $"<<Loan::getAmountLoaned()<<endl;
-    cout<<"Interest Rate: "<<Loan::getInterestRate()<<"%"<<endl;
-    cout<<"Loan Start date: "<<Account::getOpenDate()<<endl;
-    Loan::calculateInterest();
-    cout<<"Total amount due on "<<Loan::getDueDate()<<" is $"<<Loan::getAmountOwed()<<endl;
+
 }

@@ -14,14 +14,31 @@ int main() {
         cin>>choice;
 
 
-        if(choice == 1) {
+        if(choice == 1)
+        {
             int secondChoice = 0;
-            cout<<"1) Checking account"<<endl;
-            cout<<"2) Saving account"<<endl;
-            cout<< endl;
+            do
+            {
+                cout<<"1) Checking account"<<endl;
+                cout<<"2) Saving account"<<endl;
+                cin>>secondChoice<<endl;
+                if(secondChoice==1)
+                {
 
+                }
+                else if(secondChoice==2)
+                {
 
-        } else if(choice == 2) {
+                }
+                else
+                {
+                    cout<<"Invalid selection. Try again!"<<endl;
+                    cin>>secondChoice;
+                }
+            }while(secondChoice != 1 || secondChoice != 2);
+        }
+        else if(choice == 2)
+        {
 
         }
         else if(choice == 3)
@@ -38,7 +55,8 @@ int main() {
         }
         else
         {
-            cout<<"Thank you for banking with the Bank of Mac, have a great day!"<<endl;
+            cout<<"Invalid selection. Try again!"<<endl;
+            cin>>choice;
         }
     }while (choice!=0);
     return 0;

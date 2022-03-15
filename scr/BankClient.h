@@ -7,8 +7,7 @@
 
 #include <string>
 #include "Account.h"
-#include "Loan.h"
-
+#include "Date.h"
 using namespace std;
 
 
@@ -19,29 +18,20 @@ private:
     string clientFirstName;
     string clientLastName;
     int clientPhoneNumber;
-    string clientsEmailAddress;
-    string clientsEmailPassword;
 
 
-    string m_clientBirthDate;
-    int clientBirthDay;
+    Date m_clientBirthDate;
+    /*int clientBirthDay;
     int clientBrithMonth;
-    int clientBrithYear;
+    int clientBrithYear;*/
 
-    string m_openDate;
-    int accountOpenDay;
+    Date m_openDate;
+    /*int accountOpenDay;
     int accountOpenMonth;
-    int accountOpenYear;
+    int accountOpenYear;*/
 
     int accountCount;
-    Account clientActiveAccount[0];
-
-    int loansCount;
-    Loan clientActiveLoans[0];
-
-
-
-
+    Account clientActiveAccount[accountCount];
 
 public:
 
