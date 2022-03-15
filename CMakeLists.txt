@@ -6,8 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(scr)
 
 add_executable(Bank_of_Mac
-        scr/Accounts.cpp
-        scr/Accounts.h
         scr/main.cpp
         scr/Transaction.cpp
         scr/Transaction.h

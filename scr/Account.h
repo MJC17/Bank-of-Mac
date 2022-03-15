@@ -2,13 +2,15 @@
 // Created by Marcus Cameron on 2022-03-14.
 //
 
-#ifndef BANK_OF_MAC_ACCOUNTS_H
-#define BANK_OF_MAC_ACCOUNTS_H
+#ifndef BANK_OF_MAC_ACCOUNT_H
+#define BANK_OF_MAC_ACCOUNT_H
+
 #include <iostream>
 #include "Transaction.h"
 
 using namespace std;
-class Account{
+
+class Account {
 
 private:
 
@@ -33,5 +35,4 @@ public:
 
 };
 
-
-#endif //BANK_OF_MAC_ACCOUNTS_H
+#endif //BANK_OF_MAC_ACCOUNT_H
