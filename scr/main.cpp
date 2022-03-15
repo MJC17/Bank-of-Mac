@@ -11,15 +11,16 @@ int main() {
         cout<<"4) View transaction history"<<endl;
         cout<<"0) Quit"<<endl;
         cin>>choice;
-        if(choice == 1)
-        {
+
+
+        if(choice == 1) {
             int secondChoice = 0;
             cout<<"1) Checking account"<<endl;
             cout<<"2) Saving account"<<endl;
-            cout<<
-        }
-        else if(choice == 2)
-        {
+            cout<< endl;
+
+
+        } else if(choice == 2) {
 
         }
         else if(choice == 3)

@@ -5,10 +5,34 @@
 #ifndef BANK_OF_MAC_ACCOUNTS_H
 #define BANK_OF_MAC_ACCOUNTS_H
 #include <iostream>
+#include "Transaction.h"
+
 using namespace std;
 class Account{
+
+private:
+    string m_firstName;
+    string lastName;
+
+    string m_birthDate;
+    int birthDay;
+    int brithMonth;
+    int brithYear;
+
     string m_openDate;
-    double m_balance;
+    int accountOpenDay;
+    int accountOpenMonth;
+    int accountOpenYear;
+
+
+    double m_currentBalance;
+    int transactionsCount;
+    Transaction[] transactions;
+
+
+
+
+
 public:
     Account();
     Account(string openDate, double balance);

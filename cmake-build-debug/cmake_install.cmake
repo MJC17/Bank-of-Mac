@@ -1,4 +1,4 @@
-# Install script for directory: /Users/matthewarias/CLionProjects/Bank-of-Mac
+# Install script for directory: /Users/marcuscameron/My Drive/University /Winter 2022/ENGTECH 1PR3 - C++ Object-Oriented Programming/Bank-of-Mac
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/matthewarias/CLionProjects/Bank-of-Mac/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/marcuscameron/My Drive/University /Winter 2022/ENGTECH 1PR3 - C++ Object-Oriented Programming/Bank-of-Mac/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

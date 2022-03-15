@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__Bank_of_Mac_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/matthewarias/CLionProjects/Bank-of-Mac -B/Users/matthewarias/CLionProjects/Bank-of-Mac/cmake-build-debug
+  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S"/Users/marcuscameron/My Drive/University /Winter 2022/ENGTECH 1PR3 - C++ Object-Oriented Programming/Bank-of-Mac" -B"/Users/marcuscameron/My Drive/University /Winter 2022/ENGTECH 1PR3 - C++ Object-Oriented Programming/Bank-of-Mac/cmake-build-debug"
   description = Re-running CMake...
   generator = 1
 
