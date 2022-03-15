@@ -15,15 +15,20 @@ class BankClient {
 
 private:
 
-    string m_openDate;
-    int accountOpenDay;
-    int accountOpenMonth;
-    int accountOpenYear;
+    string clientFirstName;
+    string clientLastName;
+    int clientPhoneNumber;
+
 
     string m_clientBirthDate;
     int clientBirthDay;
     int clientBrithMonth;
     int clientBrithYear;
+
+    string m_openDate;
+    int accountOpenDay;
+    int accountOpenMonth;
+    int accountOpenYear;
 
     int accountCount;
     Account clientActiveAccount[accountCount];
