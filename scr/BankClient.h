@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Account.h"
+#include "Loan.h"
 
 using namespace std;
 
@@ -18,6 +19,8 @@ private:
     string clientFirstName;
     string clientLastName;
     int clientPhoneNumber;
+    string clientsEmailAddress;
+    string clientsEmailPassword;
 
 
     string m_clientBirthDate;
@@ -31,7 +34,14 @@ private:
     int accountOpenYear;
 
     int accountCount;
-    Account clientActiveAccount[accountCount];
+    Account clientActiveAccount[0];
+
+    int loansCount;
+    Loan clientActiveLoans[0];
+
+
+
+
 
 public:
 
