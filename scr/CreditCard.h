@@ -6,7 +6,7 @@
 #define BANK_OF_MAC_CREDITCARD_H
 
 #include "Loan.h"
-class CreditCard: public {
+class CreditCard {
     double m_monthlyLimit;
 public:
     CreditCard();

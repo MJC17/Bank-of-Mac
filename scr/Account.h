@@ -18,8 +18,10 @@ private:
     string m_accountType;
     Date m_openDate;
     double m_balance;
+
     int m_transactionsCount;
-    Transaction transactions[];
+    Transaction transactions[0];
+
 public:
     Account();
     Account(string accountType, Date openDate, double balance);

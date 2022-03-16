@@ -6,11 +6,13 @@
 #define BANK_OF_MAC_BANKCLIENT_H
 
 #include <string>
+
 #include "Account.h"
+#include "CreditCard.h"
 #include "Date.h"
 #include "Loan.h"
-using namespace std;
 
+using namespace std;
 
 class BankClient {
 
@@ -18,14 +20,18 @@ private:
 
     string clientFirstName;
     string clientLastName;
+    string clientEmailAddress;
     int clientPhoneNumber;
     Date m_clientBirthDate;
 
-    int loanCount;
+    int loanCount = 0;
     Loan clientActiveLoan[5];
 
-    int accountCount;
+    int accountCount = 0;
     Account clientActiveAccount[5];
+
+    int clientCreditCardCount = 0;
+    CreditCard clientActiveCreditCard[5];
 
 public:
     BankClient();
