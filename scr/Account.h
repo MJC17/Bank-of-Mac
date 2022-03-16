@@ -11,6 +11,7 @@
 using namespace std;
 #include "BankClient.h"
 #include "Date.h"
+#include "Transaction.h"
 class Account {
 
 private:
