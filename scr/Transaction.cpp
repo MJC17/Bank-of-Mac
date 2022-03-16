@@ -29,12 +29,12 @@ void Transaction::setTransactionTime(const Time &transactionTime) {
     Transaction::transactionTime = transactionTime;
 }
 
-const string &Transaction::getTransactionDesciption() const {
-    return transactionDesciption;
+const string &Transaction::getTransactionDescription() const {
+    return transactionDescription;
 }
 
-void Transaction::setTransactionDesciption(const string &transactionDesciption) {
-    Transaction::transactionDesciption = transactionDesciption;
+void Transaction::setTransactionDescription(const string &transactionDescription) {
+    Transaction::transactionDescription = transactionDescription;
 }
 
 double Transaction::getAccountBalanceAmount() const {
