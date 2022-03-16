@@ -13,6 +13,13 @@ class Date {
 public:
     Date():
     Date(int year, int month, int day);
+    int getyear() {return m_year;}
+    int getmonth() {return m_month;}
+    int getday() {return m_day;}
+    void setyear(int y) {m_year = y;}
+    void setmonth(int m) {m_month = m;}
+    void setday(int d) {m_day = d;}
+
 };
 
 

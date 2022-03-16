@@ -7,31 +7,33 @@
 
 #include <iostream>
 #include "Transaction.h"
-
-using namespace std;
 #include "BankClient.h"
 #include "Date.h"
+
+using namespace std;
+
 class Account {
 
 private:
-    string m_accountType;
-    Date m_openDate;
-    /*int accountOpenDay;
-    int accountOpenMonth;
-    int accountOpenYear;*/
-    double m_balance;
-    int m_transactionsCount;
-    Transaction transactions[];
+
+    int ClientID;
+    int accountID;
+
+    string accountType;
+
+    Date penDate;
+
+    double Currentbalance;
+
+    int transactionsCount = 0;
+    Transaction transactions[0];
+
+
 public:
+
     Account();
     Account(string accountType, Date openDate, double balance);
-    void setAccountType(string a){m_accountType = a;};
-    void setOpenDate(Date w){m_openDate = w;};
-    void setBalance(double balance){m_balance = balance;};
-    string getAccountType(){return m_accountType;};
-    Date getOpenDate(){return m_openDate;};
-    double getBalance(){return m_balance;};
-    virtual void printAccount();
+
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H
