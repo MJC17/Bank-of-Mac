@@ -15,11 +15,6 @@ Loan::Loan(double amountLoaned, Date dueDate, double interestRate)
     m_interestRate = interestRate;
     m_dueDate = dueDate;
 }
-double Loan::calculateInterest()
-{
-    double total = getAmountLoaned()*((getInterestRate()/100)+1);
-    return total;
-}
 void Loan::printLoan()
 {
 

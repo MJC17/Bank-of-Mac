@@ -24,5 +24,4 @@ public:
     Date getDueDate(){return m_dueDate;};
     double getAmountLoaned(){return m_amountLoaned;};
     virtual void printLoan();
-    double calculateInterest();
 };
