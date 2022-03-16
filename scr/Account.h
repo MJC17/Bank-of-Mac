@@ -22,7 +22,7 @@ private:
     Transaction transactions[];
 public:
     Account();
-    Account(string accountType, Date openDate, double balance);
+    Account(string accountType);
     void setAccountType(string a){m_accountType = a;};
     void setOpenDate(Date w){m_openDate = w;};
     void setBalance(double balance){m_balance = balance;};
