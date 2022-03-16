@@ -41,7 +41,7 @@ public:
 
     const string &getTransactionDescription() const;
 
-    void setTransactionDescription(const string &transactionDesciption);
+    void setTransactionDescription(const string &transactionDescription);
 
     double getAccountBalanceAmount() const;
 
