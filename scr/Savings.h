@@ -22,6 +22,7 @@ public:
     void setCompoundPeriod(int c){m_compoundPeriod = c;};
     void setInvestment(double i){m_investment = i;};
     double calculateFutureValue(int x);   //user will input the number of compounding periods
+    void printAccount();
 };
 
 #endif //BANK_OF_MAC_SAVINGS_H

@@ -34,7 +34,8 @@ private:
     Account clientActiveAccount[accountCount];
 
 public:
-
+    BankClient();
+    BankClient(string FName, string LName, int phone, Date DOB, Date opening);
 
 };
 

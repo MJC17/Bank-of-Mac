@@ -19,12 +19,18 @@ private:
     /*int accountOpenDay;
     int accountOpenMonth;
     int accountOpenYear;*/
-    double m_currentBalance;
+    double m_balance;
     int m_transactionsCount;
     Transaction transactions[];
 public:
     Account();
     Account(string accountType, Date openDate, double balance);
+    void setAccountType(string a){m_accountType = a;};
+    void setOpenDate(Date w){m_openDate = w;};
+    void setBalance(double balance){m_balance = balance;};
+    string getAccountType(){return m_accountType;};
+    Date getOpenDate(){return m_openDate;};
+    double getBalance(){return m_balance;};
     virtual void printAccount();
 };
 

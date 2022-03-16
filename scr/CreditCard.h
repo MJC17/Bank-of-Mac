@@ -5,11 +5,12 @@
 #ifndef BANK_OF_MAC_CREDITCARD_H
 #define BANK_OF_MAC_CREDITCARD_H
 
-
-class CreditCard {
+#include "Loan.h"
+class CreditCard: public {
     double m_monthlyLimit;
 public:
-
+    CreditCard();
+    CreditCard(double monthlyLimit)
 };
 
 
