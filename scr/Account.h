@@ -7,10 +7,11 @@
 
 #include <iostream>
 #include "Transaction.h"
+#include "Date.h"
 
 using namespace std;
-#include "BankClient.h"
-#include "Date.h"
+
+
 class Account {
 
 private:

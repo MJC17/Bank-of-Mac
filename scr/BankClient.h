@@ -22,10 +22,10 @@ private:
     Date m_clientBirthDate;
 
     int loanCount;
-    Loan clientActiveLoan[loanCount];
+    Loan clientActiveLoan[0];
 
     int accountCount;
-    Account clientActiveAccount[o];
+    Account clientActiveAccount[0];
 
 public:
     BankClient();
