@@ -10,7 +10,7 @@ class CreditCard: public {
     double m_monthlyLimit;
 public:
     CreditCard();
-    CreditCard(double monthlyLimit)
+    CreditCard(double amountLoaned, Date dueDate, double interestRate, double monthlyLimit);
 };
 
 
