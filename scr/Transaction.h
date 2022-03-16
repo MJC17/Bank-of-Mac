@@ -27,6 +27,34 @@ private:
 
 public:
 
+    int getAccountId() const;
+
+    void setAccountId(int accountId);
+
+    const Date &getTransactionDate() const;
+
+    void setTransactionDate(const Date &transactionDate);
+
+    const Time &getTransactionTime() const;
+
+    void setTransactionTime(const Time &transactionTime);
+
+    const string &getTransactionDesciption() const;
+
+    void setTransactionDesciption(const string &transactionDesciption);
+
+    double getAccountBalanceAmount() const;
+
+    void setAccountBalanceAmount(double accountBalanceAmount);
+
+    double getWithdrawalAmount() const;
+
+    void setWithdrawalAmount(double withdrawalAmount);
+
+    double getDepositsAmount() const;
+
+    void setDepositsAmount(double depositsAmount);
+
 
 
 
