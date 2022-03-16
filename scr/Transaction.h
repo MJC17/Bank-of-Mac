@@ -19,7 +19,7 @@ private:
 
     Date transactionDate;
     Time transactionTime;
-    string transactionDescription;
+    string transactionDesciption;
 
     double accountBalanceAmount;
     double WithdrawalAmount;
@@ -39,9 +39,9 @@ public:
 
     void setTransactionTime(const Time &transactionTime);
 
-    const string &getTransactionDescription() const;
+    const string &getTransactionDesciption() const;
 
-    void setTransactionDescription(const string &transactionDescription);
+    void setTransactionDesciption(const string &transactionDesciption);
 
     double getAccountBalanceAmount() const;
 

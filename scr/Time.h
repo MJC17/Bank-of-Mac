@@ -14,15 +14,16 @@ private :
     int second;
 public :
     //constructor with default value 0
-    Time(int h = 0, int m  = 0, int s = 0);
+    Time();
     //setter function
     void setTime(int h, int m, int s);
     //print description of object in hh:mm:ss
     void print();
     //compare two time object
     bool equals(Time);
-};
 
+    void now();
+};
 
 
 

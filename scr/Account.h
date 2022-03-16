@@ -11,7 +11,6 @@
 using namespace std;
 #include "BankClient.h"
 #include "Date.h"
-#include "Transaction.h"
 class Account {
 
 private:
@@ -22,7 +21,7 @@ private:
     Transaction transactions[];
 public:
     Account();
-    Account(string accountType);
+    Account(string accountType, Date openDate, double balance);
     void setAccountType(string a){m_accountType = a;};
     void setOpenDate(Date w){m_openDate = w;};
     void setBalance(double balance){m_balance = balance;};

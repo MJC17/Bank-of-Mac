@@ -5,12 +5,18 @@
 #include<iostream>
 #include<iomanip>
 #include "Time.h"
+#include <stdio.h>
+#include <time.h>
+
+#include <ctime>
+
 
 using namespace std;
 
-Time :: Time(int h, int m, int s)
+Time :: Time()
 {
-    hour = h;
+    time_t now = time(0);
+    hour = time_t(0);
     minute = m;
     second = s;
 }
@@ -39,19 +45,12 @@ bool Time :: equals(Time otherTime)
         return false;
 }
 
-int main()
-{
-    Time t1(10, 50, 59);
-    t1.print();  // 10:50:59
-    Time t2;  //object created with default value
-    t2.print();  // 00:00:00
-    t2.setTime(6, 39, 9); //set the new time in object
-    t2.print();  // 06:39:09
+Time Time::now (){
 
-    if(t1.equals(t2))
-        cout << "Two objects are equals\n";
-    else
-        cout << "Two objects are not equals\n";
 
-    return 0;
+    this = new Time(4,4,4)
+
+
+    return this;
+
 }
