@@ -15,23 +15,24 @@ using namespace std;
 class Account {
 
 private:
-    string m_accountType;
-    Date m_openDate;
-    double m_balance;
+    string accountType;
+    Date openDate;
+    double balance;
 
-    int m_transactionsCount;
+    int transactionsCount;
     Transaction transactions[0];
 
 public:
-    Account();
-    Account(string accountType, Date openDate, double balance);
-    void setAccountType(string a){m_accountType = a;};
-    void setOpenDate(Date w){m_openDate = w;};
-    void setBalance(double balance){m_balance = balance;};
-    string getAccountType(){return m_accountType;};
-    Date getOpenDate(){return m_openDate;};
-    double getBalance(){return m_balance;};
+
+//    Account(); we do not need the init at all - Marcus Cameron
+
+    Account(string accountType, double balance);
+
+
+
     virtual void printAccount();
+    virtual void printAccountTransactions();
+
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H

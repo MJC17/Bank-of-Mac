@@ -22,6 +22,7 @@ private:
     string clientLastName;
     string clientEmailAddress;
     int clientPhoneNumber;
+
     Date m_clientBirthDate;
 
     int loanCount = 0;
