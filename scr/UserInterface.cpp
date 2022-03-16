@@ -19,19 +19,28 @@ int main() {
             int secondChoice = 0;
             do
             {
-                cout<<"1) Checking account"<<endl;
-                cout<<"2) Saving account"<<endl;
+                cout<<"1) Open a checking account"<<endl;
+                cout<<"2) Open a savings account"<<endl;
                 cin>>secondChoice<<endl;
                 if(secondChoice==1)
                 {
-                        cout<<"First name:";
-                        string Fname, Lname;
-                        cin>>Fname<<endl;
-                        cout<<"Last name: ";
-                        cin>>Lname<<endl;
-                        int phone;
-                        cout<<"Phone Number: ";
-                        cin>>phone<<endl;
+                    cout<<"Please enter the following information."<<endl;
+                    cout<<"First name: ";
+                    string Fname, Lname;
+                    cin>>Fname<<endl;
+                    cout<<"Last name: ";
+                    cin>>Lname<<endl;
+                    int phone;
+                    cout<<"Phone Number: ";
+                    cin>>phone<<endl;
+                    int y,m,d;
+                    cout<<"Year of birth: ";
+                    cin>>y;
+                    cout<<"Month of birth: ";
+                    cin>>m;
+                    cout<<"Day of birth: ";
+                    cin>>d;
+                    Date clientDOB(y,m,d);
 
                 }
                 else if(secondChoice==2)
