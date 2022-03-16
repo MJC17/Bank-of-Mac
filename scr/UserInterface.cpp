@@ -3,6 +3,8 @@
 #include <iostream>
 #include "BankClient.h"
 #include "Date.h"
+#include <iostream>
+void skip();
 using namespace std;
 int main() {
     int choice = 0;
@@ -21,25 +23,32 @@ int main() {
             {
                 cout<<"1) Open a checking account"<<endl;
                 cout<<"2) Open a savings account"<<endl;
-                cin>>secondChoice<<endl;
+                cin>>secondChoice;
+                skip();
                 if(secondChoice==1)
                 {
                     cout<<"Please enter the following information."<<endl;
                     cout<<"First name: ";
                     string Fname, Lname;
-                    cin>>Fname<<endl;
+                    cin>>Fname;
+                    skip();
                     cout<<"Last name: ";
-                    cin>>Lname<<endl;
+                    cin>>Lname;
+                    skip();
                     int phone;
                     cout<<"Phone Number: ";
-                    cin>>phone<<endl;
+                    cin>>phone;
+                    skip();
                     int y,m,d;
                     cout<<"Year of birth: ";
                     cin>>y;
+                    skip();
                     cout<<"Month of birth: ";
                     cin>>m;
+                    skip();
                     cout<<"Day of birth: ";
                     cin>>d;
+                    skip();
                     Date clientDOB(y,m,d);
                     BankClient user(Fname, Lname, phone, clientDOB);
                 }
@@ -78,4 +87,8 @@ int main() {
         }
     }while (choice!=0);
     return 0;
+}
+void skip()
+{
+    cout<<endl;
 }
