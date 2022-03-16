@@ -13,6 +13,8 @@ int main() {
         cout<<"0) Quit"<<endl;
         cin>>choice;
 
+        int x;
+
 
         if(choice == 1)
         {
