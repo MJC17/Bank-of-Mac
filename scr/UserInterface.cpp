@@ -2,6 +2,7 @@
 // Created by Matthew Arias on 2022-03-16.
 #include <iostream>
 #include "BankClient.h"
+#include "Date.h"
 using namespace std;
 int main() {
     int choice = 0;
@@ -13,8 +14,6 @@ int main() {
         cout<<"4) View transaction history"<<endl;
         cout<<"0) Quit"<<endl;
         cin>>choice;
-
-
         if(choice == 1)
         {
             int secondChoice = 0;
@@ -25,6 +24,14 @@ int main() {
                 cin>>secondChoice<<endl;
                 if(secondChoice==1)
                 {
+                        cout<<"First name:";
+                        string Fname, Lname;
+                        cin>>Fname<<endl;
+                        cout<<"Last name: ";
+                        cin>>Lname<<endl;
+                        int phone;
+                        cout<<"Phone Number: ";
+                        cin>>phone<<endl;
 
                 }
                 else if(secondChoice==2)
