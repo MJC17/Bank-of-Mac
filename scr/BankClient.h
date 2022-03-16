@@ -24,18 +24,12 @@ private:
     /*int clientBirthDay;
     int clientBrithMonth;
     int clientBrithYear;*/
-
-    Date m_openDate;
-    /*int accountOpenDay;
-    int accountOpenMonth;
-    int accountOpenYear;*/
-
     int accountCount;
     Account clientActiveAccount[accountCount];
 
 public:
     BankClient();
-    BankClient(string FName, string LName, int phone, Date DOB, Date opening);
+    BankClient(string FName, string LName, int phone, Date DOB);
 
 };
 
