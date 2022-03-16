@@ -2,16 +2,24 @@
 // Created by Matthew Arias on 2022-03-16.
 #include <iostream>
 
+#include "BankDatabase.h"
 #include "BankClient.h"
-
 #include "Date.h"
 
 #include <iostream>
 
 void skip();
 using namespace std;
+
+
 int main() {
 
+    BankDatabases Database = *new BankDatabases();
+
+
+    string emailAddressInput, Password;
+
+    cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
 
 
 
@@ -95,6 +103,9 @@ int main() {
     } while (choice != 0);
     return 0;
 }
+
+
+
 void skip() {
     cout << endl;
 }
