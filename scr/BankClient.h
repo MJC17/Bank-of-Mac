@@ -20,10 +20,12 @@ private:
     string clientLastName;
     int clientPhoneNumber;
     Date m_clientBirthDate;
-    int accountCount;
+
     int loanCount;
     Loan clientActiveLoan[loanCount];
-    Account clientActiveAccount[accountCount];
+
+    int accountCount;
+    Account clientActiveAccount[o];
 
 public:
     BankClient();
