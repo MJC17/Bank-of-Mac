@@ -8,6 +8,7 @@
 #include <string>
 #include "Account.h"
 #include "Date.h"
+#include "Loan.h"
 using namespace std;
 
 
@@ -25,11 +26,13 @@ private:
     int clientBrithMonth;
     int clientBrithYear;*/
     int accountCount;
+    Loan m_L;
+    Account m_A;
     Account clientActiveAccount[accountCount];
 
 public:
     BankClient();
-    BankClient(string FName, string LName, int phone, Date DOB);
+    BankClient(string FName, string LName, int phone, Date DOB, Loan L, Account A);
 
 };
 
