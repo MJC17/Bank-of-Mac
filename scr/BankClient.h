@@ -19,12 +19,7 @@ private:
     string clientFirstName;
     string clientLastName;
     int clientPhoneNumber;
-
-
     Date m_clientBirthDate;
-    /*int clientBirthDay;
-    int clientBrithMonth;
-    int clientBrithYear;*/
     int accountCount;
     int loanCount;
     Loan clientActiveLoan[loanCount];

@@ -16,9 +16,6 @@ class Account {
 private:
     string m_accountType;
     Date m_openDate;
-    /*int accountOpenDay;
-    int accountOpenMonth;
-    int accountOpenYear;*/
     double m_balance;
     int m_transactionsCount;
     Transaction transactions[];
