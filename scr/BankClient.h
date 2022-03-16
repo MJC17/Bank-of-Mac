@@ -26,14 +26,13 @@ private:
     int clientBrithMonth;
     int clientBrithYear;*/
     int accountCount;
-    Loan m_L;
-    Account m_A;
+    int loanCount;
+    Loan clientActiveLoan[loanCount];
     Account clientActiveAccount[accountCount];
 
 public:
     BankClient();
-    BankClient(string FName, string LName, int phone, Date DOB, Loan L, Account A);
-
+    BankClient(string FName, string LName, int phone, Date DOB);
 };
 
 
