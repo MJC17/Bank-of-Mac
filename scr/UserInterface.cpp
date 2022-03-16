@@ -59,7 +59,7 @@ int main() {
         }
         else if(choice == 0)
         {
-            cout << "Thank you for using Bank of Mac, have a great day" << endl
+            cout << "Thank you for using Bank of Mac, have a great day" << endl;
             return 0;
         }
         else
