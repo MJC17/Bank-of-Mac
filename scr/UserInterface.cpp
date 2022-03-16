@@ -41,7 +41,7 @@ int main() {
                     cout<<"Day of birth: ";
                     cin>>d;
                     Date clientDOB(y,m,d);
-
+                    BankClient user(Fname, Lname, phone, clientDOB);
                 }
                 else if(secondChoice==2)
                 {
