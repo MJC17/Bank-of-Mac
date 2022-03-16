@@ -7,13 +7,25 @@
 
 #include "Date.h"
 #include "Time.h"
+#include <string>
+
+using namespace std;
 
 class Transaction {
 
 private:
-    double amount;
+
+    int AccountID;
+
     Date transactionDate;
-    time
+    Time transactionTime;
+    string transactionDesciption;
+
+    double accountBalanceAmount;
+    double WithdrawalAmount;
+    double depositsAmount;
+
+public:
 
 
 
