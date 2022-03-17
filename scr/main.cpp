@@ -15,7 +15,7 @@ using namespace std;
 
 int main() {
 
-    BankDatabases Database = *new BankDatabases();
+    BankDatabases Database = BankDatabases();
 
     string emailAddressInput, passwordInput;
     BankClient currentActiveClient;
@@ -37,10 +37,11 @@ int main() {
 
         loginAttemptCount++;
 
+
         if (Database.verifyClient(emailAddressInput, passwordInput)){
 
             Database.getVerifedBankClient(emailAddressInput, passwordInput, currentActiveClient);
-            skip();
+//            skip();
             break;
 
         } else if (loginAttemptCount ==  5){
@@ -51,18 +52,21 @@ int main() {
             cout << "Sorry, your login entry doesn't match our records. Please try again. (" << 5 - loginAttemptCount << " attempts left)" << endl;
 
         }
+
+
     }
+
 
     while(true) {
 
-        cout << "Hello, " << currentActiveClient.getClientFirstName() << " " << endl << endl;
+        cout << "Hello, " << currentActiveClient.getClientFirstName() << " " << currentActiveClient.getClientLastName() << endl << endl;
 
         cout << "PLEASE SELECT AN OPTION:" << endl;
         cout << "1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View
         cout << "2) Withdrawal" << endl; // the client can withdraw from any of their accounts
         cout << "3) Deposit" << endl; // the client can deposit into any of their accounts
         cout << "4) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
-        cout << "5) E-Transfer" << endl << endl ; // the client can transfer money from any of their accounts to another client at the bano
+        cout << "5) E-Transfer" << endl ; // the client can transfer money from any of their accounts to another client at the bano
         cout << "0) Quit" << endl; // end / terminate the program
 
         int choice = 0;

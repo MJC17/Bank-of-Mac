@@ -7,20 +7,21 @@
 
 BankDatabases::BankDatabases() {
 
+//    cout << "Testing" << endl;
     loadClientData();
 
 }
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
 
-//    for(int i = 0; i < bankCliendCount; i++){
-//
-//        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
-//
-//            return true;
-//        }
-//
-//    }
+    for(int i = 0; i < bankCliendCount; i++){
+
+        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
+
+            return true;
+        }
+
+    }
 
     return false;
 }
@@ -28,6 +29,14 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
 void BankDatabases::getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient) {
 
 
+    for(int i = 0; i < bankCliendCount; i++){
+
+        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
+
+            VerifedBankClient = currentClients[i];
+        }
+
+    }
 }
 
 string BankDatabases::encryptionPassword(string password) {
@@ -40,10 +49,10 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
 
 void BankDatabases::loadClientData() {
 
-//    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
-//    addNewClient(temp);
-//
-//    cout << currentClients[0].getClientEmailAddress() << endl;
+    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
+    addNewClient(temp);
+
+//    cout << temp.getClientEmailAddress() << endl;
 }
 
 void BankDatabases::saveClientData() {
@@ -52,8 +61,8 @@ void BankDatabases::saveClientData() {
 
 void BankDatabases::addNewClient(BankClient newClient) {
 
-//    bankCliendCount++;
-//    currentClients[bankCliendCount - 1] = newClient;
+    bankCliendCount++;
+    currentClients[0] = newClient;
 
 }
 
