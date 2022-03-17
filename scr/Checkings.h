@@ -10,14 +10,15 @@ class Checkings: public Account
 {
     double m_withdrawalAmount;
 private:
-    Checking();
-    Checking(string accountType, Date openDate, double balance, double witdrawalAmount);
+
+    Checkings();
+    Checkings(string accountType, double balance, double witdrawalAmount);
     void setWithdrawlAmount(double w){m_withdrawalAmount = w;};
-    double getWithdrawlAmount(){return m_withdrawalAmount;};
+//    double getWithdrawlAmount(){return m_withdrawalAmount;};
     void deposit(double d);
-    void withdrawl(double w);
-    double getBalance(){return Account::getBalance();};
-    void printAccount();
+    void withdrawal(double w);
+//    double getBalance();
+//    void printAccount();
 };
 
 

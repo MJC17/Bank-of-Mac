@@ -6,12 +6,14 @@
 #define BANK_OF_MAC_MORTGAGE_H
 #include "Loan.h"
 
-class Mortgage : public Loan{
+class Mortgage : public Loan {
+
     double m_monthlyPayment;
     int m_mortgageLength;
+
 public:
     Mortgage();
-    Mortgage(double amountLoaned, string dueDate, double interestRate, double monthlyPayment, int yearsLength);
+    Mortgage(double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength);
     double getMonthlyPayment(){return m_monthlyPayment;};
     void setMonthlyPayment(double m){m_monthlyPayment = m;};
     int getMortgageLength(){return m_mortgageLength;};

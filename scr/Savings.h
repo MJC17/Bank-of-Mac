@@ -12,9 +12,11 @@ class Savings : public Account
     double m_growthRate;
     int m_compoundPeriod;
     double m_investment;
+
 public:
+
     Savings();
-    Savings(string accountType, Date openDate, double balance, double growthRate, int compoundPeriod, double investment);
+    Savings(string accountType, double balance, double growthRate, int compoundPeriod, double investment);
     double getGrowthRate(){return m_growthRate;};
     int getCompoundPeriod(){return m_compoundPeriod;};
     double getInvestment(){return m_investment;};

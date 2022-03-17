@@ -9,8 +9,8 @@
 class CreditCard {
     double m_monthlyLimit;
 public:
-    CreditCard();
-    CreditCard(double amountLoaned, Date dueDate, double interestRate, double monthlyLimit);
+//    CreditCard();
+//    CreditCard(double amountLoaned, Date dueDate, double interestRate, double monthlyLimit);
 };
 
 

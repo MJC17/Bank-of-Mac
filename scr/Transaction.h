@@ -6,7 +6,6 @@
 #define BANK_OF_MAC_TRANSACTION_H
 
 #include "Date.h"
-#include "Time.h"
 #include <string>
 
 using namespace std;
@@ -16,9 +15,7 @@ class Transaction {
 private:
 
     int AccountID;
-
     Date transactionDate;
-    Time transactionTime;
     string transactionDesciption;
 
     double accountBalanceAmount;
@@ -34,10 +31,6 @@ public:
     const Date &getTransactionDate() const;
 
     void setTransactionDate(const Date &transactionDate);
-
-    const Time &getTransactionTime() const;
-
-    void setTransactionTime(const Time &transactionTime);
 
     const string &getTransactionDesciption() const;
 

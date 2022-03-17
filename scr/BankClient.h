@@ -10,7 +10,7 @@
 #include "Account.h"
 #include "CreditCard.h"
 #include "Date.h"
-#include "Loan.h"
+//#include "Loan.h"
 
 using namespace std;
 
@@ -24,9 +24,9 @@ private:
     int clientPhoneNumber;
 
     Date m_clientBirthDate;
-
-    int loanCount = 0;
-    Loan clientActiveLoan[5];
+//
+//    int loanCount = 0;
+//    Loan clientActiveLoan[5];
 
     int accountCount = 0;
     Account clientActiveAccount[5];
@@ -36,7 +36,7 @@ private:
 
 public:
     BankClient();
-    BankClient(string FName, string LName, int phone, Date DOB);
+//    BankClient(string FName, string LName, int phone, Date DOB);
 };
 
 

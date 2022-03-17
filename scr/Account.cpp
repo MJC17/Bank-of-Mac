@@ -7,4 +7,10 @@
 using namespace std;
 
 
+Account::Account(string accountType, double balance) {
 
+}
+
+Account::Account() {
+
+}

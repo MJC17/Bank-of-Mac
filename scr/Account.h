@@ -24,14 +24,13 @@ private:
 
 public:
 
-//    Account(); we do not need the init at all - Marcus Cameron
-
     Account(string accountType, double balance);
 
+    Account();
 
-
-    virtual void printAccount();
-    virtual void printAccountTransactions();
+//
+//    virtual void printAccount();
+//    virtual void printAccountTransactions();
 
 };
 

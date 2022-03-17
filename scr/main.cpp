@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-//#include "BankDatabase.h"
+#include "BankDatabase.h"
 //#include "BankClient.h"
 //#include "Date.h"
 
@@ -15,7 +15,7 @@ using namespace std;
 
 int main() {
 
-//    BankDatabases Database = *new BankDatabases();
+    BankDatabases Database = *new BankDatabases();
 
     string emailAddressInput, Password;
 

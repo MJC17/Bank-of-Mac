@@ -21,14 +21,6 @@ void Transaction::setTransactionDate(const Date &transactionDate) {
     Transaction::transactionDate = transactionDate;
 }
 
-const Time &Transaction::getTransactionTime() const {
-    return transactionTime;
-}
-
-void Transaction::setTransactionTime(const Time &transactionTime) {
-    Transaction::transactionTime = transactionTime;
-}
-
 const string &Transaction::getTransactionDesciption() const {
     return transactionDesciption;
 }
