@@ -21,15 +21,15 @@ public:
 
     bool verifyClient(string emailAddress, string password);
 
-    void getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient);
+    BankClient* getVerifedBankClient(string emailAddress, string password);
 
     string encryptionPassword(string password);
 
     string dencryptionPassword(string encryptionPassword);
 
-    void loadClientData();
+    void loadAllClientData();
 
-    void saveClientData();
+    void saveAllClientData();
 
     void addNewClient(BankClient newClient);
 

@@ -15,15 +15,10 @@ using namespace std;
 
 int main() {
 
-    cout << "\033[2J\033[1;1H";
-    cout << "\x1B[2J\x1B[H";
-
-
-
     BankDatabases Database = BankDatabases();
 
     string emailAddressInput, passwordInput;
-    BankClient currentActiveClient;
+    BankClient* currentActiveClient;
     int loginAttemptCount = 0;
 
     cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
@@ -45,10 +40,11 @@ int main() {
 
         if (Database.verifyClient(emailAddressInput, passwordInput)){
 
-            Database.getVerifedBankClient(emailAddressInput, passwordInput, currentActiveClient);
+            currentActiveClient = Database.getVerifedBankClient(emailAddressInput, passwordInput);
+            skip();
             break;
 
-        } else if (loginAttemptCount ==  5){
+        } else if (loginAttemptCount == 5){
             cout << "Sorry, you have attempted to login too many times. Ending Program, GOODBYE!" << endl;
             exit(0);
 
@@ -63,7 +59,7 @@ int main() {
 
     while(true) {
 
-        cout << "Hello, " << currentActiveClient.getClientFirstName() << " " << currentActiveClient.getClientLastName() << endl ;
+        cout << "Hello, " << currentActiveClient->getClientFirstName() << " " << currentActiveClient->getClientLastName() << endl ;
         cout << "PLEASE SELECT AN OPTION:" << endl;
         cout << "1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View
         cout << "2) Withdrawal" << endl; // the client can withdraw from any of their accounts

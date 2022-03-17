@@ -8,7 +8,7 @@
 BankDatabases::BankDatabases() {
 
 //    cout << "Testing" << endl;
-    loadClientData();
+    loadAllClientData();
 
 }
 
@@ -26,16 +26,15 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
     return false;
 }
 
-void BankDatabases::getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient) {
-
+BankClient* BankDatabases::getVerifedBankClient(string emailAddress, string password) {
 
     for(int i = 0; i < bankCliendCount; i++){
 
         if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
 
-            VerifedBankClient = clientDataList[i];
-        }
+            return &clientDataList[i];
 
+        }
     }
 }
 
@@ -47,25 +46,25 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
     return std::string();
 }
 
-void BankDatabases::loadClientData() {
+void BankDatabases::loadAllClientData() {
 
     BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
     addNewClient(temp);
 
-//    cout << temp.getClientEmailAddress() << endl;
 }
 
-void BankDatabases::saveClientData() {
+void BankDatabases::saveAllClientData() {
 
 }
 
 void BankDatabases::addNewClient(BankClient newClient) {
 
     bankCliendCount++;
-    clientDataList[0] = newClient;
+    clientDataList[bankCliendCount - 1] = newClient;
 
 }
 
 void BankDatabases::removeClient(BankClient Client) {
 
 }
+
