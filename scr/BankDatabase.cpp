@@ -16,7 +16,7 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
 
     for(int i = 0; i < bankCliendCount; i++){
 
-        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
+        if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
 
             return true;
         }
@@ -31,9 +31,9 @@ void BankDatabases::getVerifedBankClient(string emailAddress, string password, B
 
     for(int i = 0; i < bankCliendCount; i++){
 
-        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
+        if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
 
-            VerifedBankClient = currentClients[i];
+            VerifedBankClient = clientDataList[i];
         }
 
     }
@@ -62,7 +62,7 @@ void BankDatabases::saveClientData() {
 void BankDatabases::addNewClient(BankClient newClient) {
 
     bankCliendCount++;
-    currentClients[0] = newClient;
+    clientDataList[0] = newClient;
 
 }
 
