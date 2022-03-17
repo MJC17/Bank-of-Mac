@@ -15,12 +15,18 @@ BankClient::BankClient() {
 
 }
 
-BankClient::BankClient(string FName, string LName, string emailAddress, string password, int phone, Date DOB) {
+BankClient::BankClient(string FName, string LName, string emailAddress, string password, int phoneNum, Date DOB) {
 
     clientFirstName = FName;
     clientLastName = LName;
     clientEmailAddress = emailAddress;
-    client
+    clientPassword = password;
+    clientPhoneNumber = phoneNum;
+    m_clientBirthDate = DOB;
+}
+
+const string &BankClient::getClientPassword() const {
+    return clientPassword;
 }
 
 const string &BankClient::getClientFirstName() const {

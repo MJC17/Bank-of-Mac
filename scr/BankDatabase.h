@@ -11,7 +11,8 @@ class BankDatabases {
 
 private:
 
-    BankClient CurrentClients[0];
+    int bankCliendCount = 0;
+    BankClient currentClients[1000000];
     const string encryptionKey = "";
 
 public:

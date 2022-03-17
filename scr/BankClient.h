@@ -51,6 +51,8 @@ public:
     BankClient();
 
     BankClient(string FName, string LName, string emailAddress, string password, int phone, Date DOB);
+
+    const string &getClientPassword() const;
 };
 
 

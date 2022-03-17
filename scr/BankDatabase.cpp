@@ -6,10 +6,22 @@
 #include "BankDatabase.h"
 
 BankDatabases::BankDatabases() {
-//    std::cout << "testing";
+
+    loadClientData();
+
 }
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
+
+//    for(int i = 0; i < bankCliendCount; i++){
+//
+//        if (currentClients[i].getClientEmailAddress() == emailAddress && currentClients[i].getClientPassword() == password ){
+//
+//            return true;
+//        }
+//
+//    }
+
     return false;
 }
 
@@ -28,6 +40,10 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
 
 void BankDatabases::loadClientData() {
 
+//    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
+//    addNewClient(temp);
+//
+//    cout << currentClients[0].getClientEmailAddress() << endl;
 }
 
 void BankDatabases::saveClientData() {
@@ -35,6 +51,9 @@ void BankDatabases::saveClientData() {
 }
 
 void BankDatabases::addNewClient(BankClient newClient) {
+
+//    bankCliendCount++;
+//    currentClients[bankCliendCount - 1] = newClient;
 
 }
 
