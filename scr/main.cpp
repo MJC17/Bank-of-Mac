@@ -4,9 +4,10 @@
 
 
 #include <iostream>
+#include <cstdlib>
 
 #include "BankDatabase.h"
-//#include "BankClient.h"
+#include "BankClient.h"
 //#include "Date.h"
 
 void skip();
@@ -17,10 +18,40 @@ int main() {
 
     BankDatabases Database = *new BankDatabases();
 
-    string emailAddressInput, Password;
+    string emailAddressInput, passwordInput;
+    BankClient currentActiveClient = *new BankClient();
+    int loginAttemptCount = 0;
 
     cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
 
+
+    cout << "----- Login -----" << endl;
+
+    while (true){
+
+        cout << "Email: ";
+        cin >> emailAddressInput;
+
+        cout << "Password: ";
+        cin >> passwordInput;
+        skip();
+
+        loginAttemptCount++;
+
+        if (Database.verifyClient(emailAddressInput, passwordInput)){
+
+            currentActiveClient = Database.getVerifedBankClient(emailAddressInput, passwordInput);
+            break;
+
+        } else if (loginAttemptCount ==  5){
+            cout << "Sorry, you have attempted to login too many times. Ending Program, GOODBYE!" << endl;
+            exit(0);
+
+        } else {
+            cout << "Sorry, your login entry doesn't match our records. Please try again. (" << 5 - loginAttemptCount << " attempts left)" << endl;
+
+        }
+    }
 
 
 
@@ -105,7 +136,7 @@ int main() {
 }
 
 
-//
-//void skip() {
-//    cout << endl;
-//}
+
+void skip() {
+    cout << endl;
+}

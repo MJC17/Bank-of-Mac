@@ -14,4 +14,8 @@ BankClient::BankClient(string FName, string LName, int phone, Date DOB)
     m_clientBirthDate = DOB;
 }
 
+BankClient::BankClient() {
+
+}
+
 

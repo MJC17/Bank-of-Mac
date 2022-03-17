@@ -6,7 +6,7 @@
 #include "BankDatabase.h"
 
 BankDatabases::BankDatabases() {
-    std::cout << "testing";
+//    std::cout << "testing";
 }
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
