@@ -18,7 +18,7 @@ int main() {
     BankDatabases Database = *new BankDatabases();
 
     string emailAddressInput, passwordInput;
-    BankClient currentActiveClient = *new BankClient();
+    BankClient currentActiveClient;
     int loginAttemptCount = 0;
 
     cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
@@ -39,7 +39,8 @@ int main() {
 
         if (Database.verifyClient(emailAddressInput, passwordInput)){
 
-            currentActiveClient = Database.getVerifedBankClient(emailAddressInput, passwordInput);
+            Database.getVerifedBankClient(emailAddressInput, passwordInput, currentActiveClient);
+            skip();
             break;
 
         } else if (loginAttemptCount ==  5){
@@ -53,6 +54,8 @@ int main() {
     }
 
     while(true) {
+
+        cout << "Hello, " << currentActiveClient.getClientFirstName() << " " << endl << endl;
 
         cout << "PLEASE SELECT AN OPTION:" << endl;
         cout << "1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View

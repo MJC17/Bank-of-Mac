@@ -21,7 +21,18 @@ private:
     string clientFirstName;
     string clientLastName;
     string clientEmailAddress;
+    string clientPassword;
     int clientPhoneNumber;
+public:
+    const string &getClientFirstName() const;
+
+    const string &getClientLastName() const;
+
+    const string &getClientEmailAddress() const;
+
+    int getClientPhoneNumber() const;
+
+private:
 
     Date m_clientBirthDate;
 
@@ -39,7 +50,7 @@ public:
 
     BankClient();
 
-    BankClient(string FName, string LName, int phone, Date DOB);
+    BankClient(string FName, string LName, string emailAddress, string password, int phone, Date DOB);
 };
 
 

@@ -13,7 +13,7 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
     return false;
 }
 
-BankClient BankDatabases::getVerifedBankClient(string emailAddress, string password) {
+void BankDatabases::getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient) {
 
 
 }

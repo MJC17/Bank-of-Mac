@@ -20,7 +20,7 @@ public:
 
     bool verifyClient(string emailAddress, string password);
 
-    BankClient getVerifedBankClient(string emailAddress, string password);
+    void getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient);
 
     string encryptionPassword(string password);
 
