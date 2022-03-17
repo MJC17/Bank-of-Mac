@@ -26,14 +26,15 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
     return false;
 }
 
-void BankDatabases::getVerifedBankClient(string emailAddress, string password, BankClient& VerifedBankClient) {
+void BankDatabases::getVerifedBankClient(string emailAddress, string password, BankClient* VerifedBankClient) {
 
 
     for(int i = 0; i < bankCliendCount; i++){
 
         if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
 
-            VerifedBankClient = clientDataList[i];
+            *VerifedBankClient = clientDataList[i];
+
         }
 
     }
@@ -55,8 +56,18 @@ void BankDatabases::loadClientData() {
 //    cout << temp.getClientEmailAddress() << endl;
 }
 
-void BankDatabases::saveClientData() {
+void BankDatabases::saveClientData(BankClient client) {
 
+    for(int i = 0; i < bankCliendCount; i++){
+
+        if (clientDataList[i].getClientEmailAddress() == client.getClientEmailAddress() && clientDataList[i].getClientPassword() == client.getClientPassword()) {
+
+            clientDataList[i] = client;
+
+        }
+
+        saveAllClientData();
+    }
 }
 
 void BankDatabases::addNewClient(BankClient newClient) {

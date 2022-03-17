@@ -46,6 +46,8 @@ int main() {
         if (Database.verifyClient(emailAddressInput, passwordInput)){
 
             Database.getVerifedBankClient(emailAddressInput, passwordInput, currentActiveClient);
+            cout << &currentActiveClient << endl;
+
             break;
 
         } else if (loginAttemptCount ==  5){
