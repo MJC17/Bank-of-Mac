@@ -34,9 +34,10 @@ private:
     int clientCreditCardCount = 0;
     CreditCard clientActiveCreditCard[5];
 
+
 public:
-    BankClient();
-//    BankClient(string FName, string LName, int phone, Date DOB);
+
+    BankClient(string FName, string LName, int phone, Date DOB);
 };
 
 
