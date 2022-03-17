@@ -8,7 +8,6 @@
 
 #include "BankDatabase.h"
 #include "BankClient.h"
-//#include "Date.h"
 
 void skip();
 using namespace std;
