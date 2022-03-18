@@ -5,6 +5,7 @@
 #ifndef BANK_OF_MAC_BANK_H
 #define BANK_OF_MAC_BANK_H
 
+
 #include "BankClient.h"
 
 class BankDatabases {
@@ -27,9 +28,9 @@ public:
 
     string dencryptionPassword(string encryptionPassword);
 
-    void loadAllClientData();
+    void loadAllData();
 
-    void saveAllClientData();
+    void saveAllData();
 
     void addNewClient(BankClient newClient);
 

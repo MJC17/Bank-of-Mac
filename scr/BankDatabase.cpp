@@ -3,12 +3,14 @@
 //
 
 #include <iostream>
+#include <fstream>
 #include "BankDatabase.h"
 
 BankDatabases::BankDatabases() {
 
 //    cout << "Testing" << endl;
-    loadAllClientData();
+    loadAllData();
+    saveAllData();
 
 }
 
@@ -46,14 +48,35 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
     return std::string();
 }
 
-void BankDatabases::loadAllClientData() {
+void BankDatabases::loadAllData() {
 
     BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
     addNewClient(temp);
 
+    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", 3234232, Date());
+    addNewClient(temp1);
+
 }
 
-void BankDatabases::saveAllClientData() {
+void BankDatabases::saveAllData() {
+
+    fstream databaseFile = fstream("data.txt", ios::in);
+
+    if (databaseFile){
+
+        for(int i = 0; i < bankCliendCount; i++){
+
+
+            databaseFile << "Writing this to a file.\n";
+
+
+        }
+
+    } else {
+        cout << "Error: Could not find data.txt" << endl;
+    }
+
+    databaseFile.close();
 
 }
 

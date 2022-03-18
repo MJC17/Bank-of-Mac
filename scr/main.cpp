@@ -16,14 +16,15 @@ using namespace std;
 
 int main() {
 
-    BankDatabases Database = BankDatabases();
+    BankDatabases database = BankDatabases();
 
     string emailAddressInput, passwordInput;
     BankClient* currentActiveClient;
     int loginAttemptCount = 0;
 
     printLogo();
-    cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
+    skip();
+//    cout << "WELCOME TO THE BANK OF MAC ATM" << endl << endl;
 
 
     cout << "----- Login -----" << endl;
@@ -39,10 +40,10 @@ int main() {
 
         loginAttemptCount++;
 
-        if (Database.verifyClient(emailAddressInput, passwordInput)){
+        if (database.verifyClient(emailAddressInput, passwordInput)){
 
-            currentActiveClient = Database.getVerifedBankClient(emailAddressInput, passwordInput);
-            skip();
+            currentActiveClient = database.getVerifedBankClient(emailAddressInput, passwordInput);
+            system("clear");
             break;
 
         } else if (loginAttemptCount == 5){
@@ -82,6 +83,7 @@ int main() {
 
         } else if (choice == 0) {
             cout << "Thank you for using Bank of Mac, have a great day" << endl;
+            database.saveAllData();
             break;
 
         } else {
@@ -90,6 +92,7 @@ int main() {
         }
 
     }
+
 }
 
 void printLogo(){
