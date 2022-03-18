@@ -60,21 +60,35 @@ void BankDatabases::loadAllData() {
 
 void BankDatabases::saveAllData() {
 
-    fstream databaseFile = fstream("data.txt", ios::in);
+    fstream databaseFile = fstream("ClientData.txt", ios::out);
 
     if (databaseFile){
 
+        databaseFile << bankCliendCount << endl;
+
+
         for(int i = 0; i < bankCliendCount; i++){
 
+            databaseFile << clientDataList[i].getClientFirstName() << "\t";
+            databaseFile << clientDataList[i].getClientLastName() << "\t";
+            databaseFile << clientDataList[i].getClientEmailAddress() << "\t";
+            databaseFile << clientDataList[i].getClientPassword() << "\t";
+            databaseFile << clientDataList[i].getClientNumberId()<< "\t";
+            databaseFile << clientDataList[i].getClientPhoneNumber() << "\t";
 
-            databaseFile << "Writing this to a file.\n";
+            Date clientDOB = clientDataList[i].getClientBirthDate();
+            databaseFile << clientDOB.getDay() << "/";
+            databaseFile << clientDOB.getMonth() << "/";
+            databaseFile << clientDOB.getYear() << "\t";
 
+            databaseFile << endl;
 
         }
 
     } else {
-        cout << "Error: Could not find data.txt" << endl;
+        cout << "Error: Could not find ClientData.txt" << endl;
     }
+
 
     databaseFile.close();
 

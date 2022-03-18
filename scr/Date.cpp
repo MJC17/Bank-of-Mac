@@ -6,14 +6,38 @@
 #include "Date.h"
 Date::Date()
 {
-    m_year = 0;
-    m_month = 0;
-    m_day = 0;
+    year = 0;
+    month = 0;
+    day = 0;
 }
 
-Date::Date(int year, int month, int day)
+Date::Date(int y, int m, int d)
 {
-    m_year = year;
-    m_month = month;
-    m_day = day;
+    year = y;
+    month = m;
+    day = d;
+}
+
+int Date::getYear() const {
+    return year;
+}
+
+void Date::setYear(int year) {
+    Date::year = year;
+}
+
+int Date::getMonth() const {
+    return month;
+}
+
+void Date::setMonth(int month) {
+    Date::month = month;
+}
+
+int Date::getDay() const {
+    return day;
+}
+
+void Date::setDay(int day) {
+    Date::day = day;
 }

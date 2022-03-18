@@ -4,6 +4,8 @@
 
 #include "BankClient.h"
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 
@@ -22,7 +24,8 @@ BankClient::BankClient(string FName, string LName, string emailAddress, string p
     clientEmailAddress = emailAddress;
     clientPassword = password;
     clientPhoneNumber = phoneNum;
-    m_clientBirthDate = DOB;
+    clientBirthDate = DOB;
+    clientNumberID = createClientNumberID();
 }
 
 const string &BankClient::getClientPassword() const {
@@ -43,6 +46,21 @@ const string &BankClient::getClientEmailAddress() const {
 
 int BankClient::getClientPhoneNumber() const {
     return clientPhoneNumber;
+}
+
+string BankClient::createClientNumberID() {
+
+
+
+    return "4955" + std::to_string(9) + "4404";
+}
+
+const string &BankClient::getClientNumberId() const {
+    return clientNumberID;
+}
+
+const Date &BankClient::getClientBirthDate() const {
+    return clientBirthDate;
 }
 
 

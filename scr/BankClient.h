@@ -22,19 +22,13 @@ private:
     string clientLastName;
     string clientEmailAddress;
     string clientPassword;
+    string clientNumberID;
     int clientPhoneNumber;
+    Date clientBirthDate;
 public:
-    const string &getClientFirstName() const;
-
-    const string &getClientLastName() const;
-
-    const string &getClientEmailAddress() const;
-
-    int getClientPhoneNumber() const;
+    const Date &getClientBirthDate() const;
 
 private:
-
-    Date m_clientBirthDate;
 
     int loanCount = 0;
     Loan clientActiveLoan[5];
@@ -53,6 +47,20 @@ public:
     BankClient(string FName, string LName, string emailAddress, string password, int phone, Date DOB);
 
     const string &getClientPassword() const;
+
+    const string &getClientFirstName() const;
+
+    const string &getClientLastName() const;
+
+    const string &getClientEmailAddress() const;
+
+    int getClientPhoneNumber() const;
+
+    string createClientNumberID();
+
+    const string &getClientNumberId() const;
+
+
 };
 
 
