@@ -16,9 +16,10 @@ BankDatabases::BankDatabases() {
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
 
-    for(int i = 0; i < bankCliendCount; i++){
+    for (int i = 0; i < bankCliendCount; i++) {
 
-        if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
+        if (clientDataList[i].getClientEmailAddress() == emailAddress &&
+            clientDataList[i].getClientPassword() == password) {
 
             return true;
         }
@@ -28,11 +29,12 @@ bool BankDatabases::verifyClient(string emailAddress, string password) {
     return false;
 }
 
-BankClient* BankDatabases::getVerifedBankClient(string emailAddress, string password) {
+BankClient *BankDatabases::getVerifedBankClient(string emailAddress, string password) {
 
-    for(int i = 0; i < bankCliendCount; i++){
+    for (int i = 0; i < bankCliendCount; i++) {
 
-        if (clientDataList[i].getClientEmailAddress() == emailAddress && clientDataList[i].getClientPassword() == password ){
+        if (clientDataList[i].getClientEmailAddress() == emailAddress &&
+            clientDataList[i].getClientPassword() == password) {
 
             return &clientDataList[i];
 
@@ -60,37 +62,44 @@ void BankDatabases::loadAllData() {
 
 void BankDatabases::saveAllData() {
 
-    fstream databaseFile = fstream("ClientData.txt", ios::out);
-
-    if (databaseFile){
-
-        databaseFile << bankCliendCount << endl;
+    fstream DataFile = fstream("Data.txt", ios::out);
 
 
-        for(int i = 0; i < bankCliendCount; i++){
+    if (DataFile) {
 
-            databaseFile << clientDataList[i].getClientFirstName() << "\t";
-            databaseFile << clientDataList[i].getClientLastName() << "\t";
-            databaseFile << clientDataList[i].getClientEmailAddress() << "\t";
-            databaseFile << clientDataList[i].getClientPassword() << "\t";
-            databaseFile << clientDataList[i].getClientNumberId()<< "\t";
-            databaseFile << clientDataList[i].getClientPhoneNumber() << "\t";
+        DataFile << bankCliendCount << endl;
 
-            Date clientDOB = clientDataList[i].getClientBirthDate();
-            databaseFile << clientDOB.getDay() << "/";
-            databaseFile << clientDOB.getMonth() << "/";
-            databaseFile << clientDOB.getYear() << "\t";
+        for (int clientIndex = 0; clientIndex < bankCliendCount; clientIndex++) {
 
-            databaseFile << endl;
+            DataFile << clientDataList[clientIndex].getClientFirstName() << "\t";
+            DataFile << clientDataList[clientIndex].getClientLastName() << "\t";
+            DataFile << clientDataList[clientIndex].getClientEmailAddress() << "\t";
+            DataFile << clientDataList[clientIndex].getClientPassword() << "\t";
+            DataFile << clientDataList[clientIndex].getClientNumberId() << "\t";
+            DataFile << clientDataList[clientIndex].getClientPhoneNumber() << "\t";
+
+            Date clientDOB = clientDataList[clientIndex].getClientBirthDate();
+            DataFile << clientDOB.getDay() << "/";
+            DataFile << clientDOB.getMonth() << "/";
+            DataFile << clientDOB.getYear() << "\t";
+
+            DataFile << endl;
+
+            DataFile << clientDataList[clientIndex].getAccountCount();
+
+
+            for (int accIndex = 0; accIndex < clientDataList[clientIndex].getAccountCount(); accIndex++) {
+
+
+            }
 
         }
 
     } else {
-        cout << "Error: Could not find ClientData.txt" << endl;
+        cout << "Error: Could not find Data.txt" << endl;
     }
 
-
-    databaseFile.close();
+    DataFile.close();
 
 }
 

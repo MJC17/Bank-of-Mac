@@ -10,7 +10,9 @@
 #include "BankClient.h"
 
 void printLogo();
+
 void skip();
+
 using namespace std;
 
 
@@ -19,7 +21,7 @@ int main() {
     BankDatabases database = BankDatabases();
 
     string emailAddressInput, passwordInput;
-    BankClient* currentActiveClient;
+    BankClient *currentActiveClient;
     int loginAttemptCount = 0;
 
     printLogo();
@@ -29,7 +31,7 @@ int main() {
 
     cout << "----- Login -----" << endl;
 
-    while (true){
+    while (true) {
 
         cout << "Enter Email: ";
         cin >> emailAddressInput;
@@ -40,13 +42,13 @@ int main() {
 
         loginAttemptCount++;
 
-        if (database.verifyClient(emailAddressInput, passwordInput)){
+        if (database.verifyClient(emailAddressInput, passwordInput)) {
 
             currentActiveClient = database.getVerifedBankClient(emailAddressInput, passwordInput);
             system("clear");
             break;
 
-        } else if (loginAttemptCount == 5){
+        } else if (loginAttemptCount == 5) {
             cout << "Sorry, you have attempted to login too many times. Ending Program, GOODBYE!" << endl;
             exit(0);
 
@@ -57,15 +59,16 @@ int main() {
     }
 
 
-    while(true) {
+    while (true) {
 
-        cout << "Hello, " << currentActiveClient->getClientFirstName() << " " << currentActiveClient->getClientLastName() << endl ;
+        cout << "Hello, " << currentActiveClient->getClientFirstName() << " " << currentActiveClient->getClientLastName() << endl;
         cout << "PLEASE SELECT AN OPTION:" << endl;
-        cout << "1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View
+        cout << "1) View Account " << endl;
+        // client can view all of their active accounts, then pick which transaction history they want to View
         cout << "2) Withdrawal" << endl; // the client can withdraw from any of their accounts
         cout << "3) Deposit" << endl; // the client can deposit into any of their accounts
         cout << "4) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
-        cout << "5) E-Transfer" << endl ; // the client can transfer money from any of their accounts to another client at the bano
+        cout << "5) E-Transfer" << endl; // the client can transfer money from any of their accounts to another client at the bano
         cout << "0) Quit" << endl; // end / terminate the program
 
         int choice = 0;
@@ -95,7 +98,7 @@ int main() {
 
 }
 
-void printLogo(){
+void printLogo() {
 
     cout << " ______        _       ____  _____  ___  ____       ___   ________    ____    ____       _        ______  \n"
             "|_   _ \\      / \\     |_   \\|_   _||_  ||_  _|    .'   `.|_   __  |  |_   \\  /   _|     / \\     .' ___  | \n"

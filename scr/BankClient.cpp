@@ -63,6 +63,15 @@ const Date &BankClient::getClientBirthDate() const {
     return clientBirthDate;
 }
 
+int BankClient::getLoanCount() const {
+    return loanCount;
+}
 
+int BankClient::getAccountCount() const {
+    return accountCount;
+}
 
+int BankClient::getClientCreditCardCount() const {
+    return clientCreditCardCount;
+}
 

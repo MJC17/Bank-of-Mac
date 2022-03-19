@@ -25,10 +25,6 @@ private:
     string clientNumberID;
     int clientPhoneNumber;
     Date clientBirthDate;
-public:
-    const Date &getClientBirthDate() const;
-
-private:
 
     int loanCount = 0;
     Loan clientActiveLoan[5];
@@ -38,7 +34,6 @@ private:
 
     int clientCreditCardCount = 0;
     CreditCard clientActiveCreditCard[5];
-
 
 public:
 
@@ -60,6 +55,13 @@ public:
 
     const string &getClientNumberId() const;
 
+    const Date &getClientBirthDate() const;
+
+    int getLoanCount() const;
+
+    int getAccountCount() const;
+
+    int getClientCreditCardCount() const;
 
 };
 

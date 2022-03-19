@@ -22,7 +22,7 @@ public:
 
     bool verifyClient(string emailAddress, string password);
 
-    BankClient* getVerifedBankClient(string emailAddress, string password);
+    BankClient *getVerifedBankClient(string emailAddress, string password);
 
     string encryptionPassword(string password);
 
