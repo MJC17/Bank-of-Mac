@@ -9,10 +9,7 @@
 using namespace std;
 
 
-
 BankClient::BankClient() {
-
-
 
 
 }
@@ -51,7 +48,6 @@ int BankClient::getClientPhoneNumber() const {
 string BankClient::createClientNumberID() {
 
 
-
     return "4955" + std::to_string(9) + "4404";
 }
 
@@ -73,5 +69,16 @@ int BankClient::getAccountCount() const {
 
 int BankClient::getClientCreditCardCount() const {
     return clientCreditCardCount;
+}
+
+void BankClient::getAccounts(Account *accountList) {
+
+    for (int accIndex = 0; accIndex < accountCount; accIndex++) {
+
+        accountList[accIndex] = clientActiveAccount[accIndex];
+
+    }
+
+
 }
 

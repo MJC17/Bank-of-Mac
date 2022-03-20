@@ -4,15 +4,14 @@
 
 
 #include "Date.h"
-Date::Date()
-{
+
+Date::Date() {
     year = 0;
     month = 0;
     day = 0;
 }
 
-Date::Date(int y, int m, int d)
-{
+Date::Date(int y, int m, int d) {
     year = y;
     month = m;
     day = d;
@@ -40,4 +39,8 @@ int Date::getDay() const {
 
 void Date::setDay(int day) {
     Date::day = day;
+}
+
+string Date::toString() {
+    return std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
 }

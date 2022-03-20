@@ -63,6 +63,9 @@ public:
 
     int getClientCreditCardCount() const;
 
+    void getAccounts(Account *accountList);
+
+
 };
 
 

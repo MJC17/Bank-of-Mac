@@ -79,17 +79,18 @@ void BankDatabases::saveAllData() {
             DataFile << clientDataList[clientIndex].getClientPhoneNumber() << "\t";
 
             Date clientDOB = clientDataList[clientIndex].getClientBirthDate();
-            DataFile << clientDOB.getDay() << "/";
-            DataFile << clientDOB.getMonth() << "/";
-            DataFile << clientDOB.getYear() << "\t";
+            DataFile << clientDOB.toString() << "\n";
 
             DataFile << endl;
 
             DataFile << clientDataList[clientIndex].getAccountCount();
 
+            Account clientAccounts[clientDataList[clientIndex].getAccountCount()];
+            clientDataList[clientIndex].getAccounts(clientAccounts);
 
             for (int accIndex = 0; accIndex < clientDataList[clientIndex].getAccountCount(); accIndex++) {
 
+//                clientAccounts[accIndex].
 
             }
 

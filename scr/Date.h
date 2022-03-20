@@ -5,6 +5,11 @@
 #ifndef BANK_OF_MAC_DATE_H
 #define BANK_OF_MAC_DATE_H
 
+#include <ostream>
+#include <string>
+
+using namespace std;
+
 class Date {
 
 private:
@@ -30,9 +35,12 @@ public:
 
     void setDay(int day);
 
-
-
+    string toString();
 };
 
+//std::ostream &operator<<(std::ostream &os, const Date &date) {
+//    os << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
+//    return os;
+//}
 
 #endif //BANK_OF_MAC_DATE_H
