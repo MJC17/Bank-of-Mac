@@ -20,6 +20,7 @@ int main() {
 
     BankDatabases database = BankDatabases();
 
+
     string emailAddressInput, passwordInput;
     BankClient *currentActiveClient;
     int loginAttemptCount = 0;

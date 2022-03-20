@@ -9,8 +9,10 @@
 BankDatabases::BankDatabases() {
 
 //    cout << "Testing" << endl;
+    srand(time(0));
     loadAllData();
     saveAllData();
+
 
 }
 
@@ -79,9 +81,10 @@ void BankDatabases::saveAllData() {
             DataFile << clientDataList[clientIndex].getClientPhoneNumber() << "\t";
 
             Date clientDOB = clientDataList[clientIndex].getClientBirthDate();
-            DataFile << clientDOB.toString() << "\n";
+            DataFile << clientDOB.toString();
 
             DataFile << endl;
+
 
             DataFile << clientDataList[clientIndex].getAccountCount();
 
@@ -106,6 +109,8 @@ void BankDatabases::saveAllData() {
 
 void BankDatabases::addNewClient(BankClient newClient) {
 
+    newClient.setClientNumberId(createClientNumberID());
+
     bankCliendCount++;
     clientDataList[bankCliendCount - 1] = newClient;
 
@@ -115,3 +120,27 @@ void BankDatabases::removeClient(BankClient Client) {
 
 }
 
+string BankDatabases::createClientNumberID() {
+
+    string clientNumberID;
+
+    for (int i = 0; i < 10; i++) {
+
+        int num = rand() % 10;
+        clientNumberID = clientNumberID + std::to_string(num);
+
+    }
+
+    if (bankCliendCount != 0) {
+
+        for (int i = 0; i < bankCliendCount - 1; i++) {
+
+            if (clientDataList[i].getClientNumberId() == clientNumberID) {
+
+                return createClientNumberID();
+            }
+        }
+    }
+    return clientNumberID;
+
+}

@@ -22,7 +22,7 @@ BankClient::BankClient(string FName, string LName, string emailAddress, string p
     clientPassword = password;
     clientPhoneNumber = phoneNum;
     clientBirthDate = DOB;
-    clientNumberID = createClientNumberID();
+
 }
 
 const string &BankClient::getClientPassword() const {
@@ -41,14 +41,8 @@ const string &BankClient::getClientEmailAddress() const {
     return clientEmailAddress;
 }
 
-int BankClient::getClientPhoneNumber() const {
+string BankClient::getClientPhoneNumber() const {
     return clientPhoneNumber;
-}
-
-string BankClient::createClientNumberID() {
-
-
-    return "4955" + std::to_string(9) + "4404";
 }
 
 const string &BankClient::getClientNumberId() const {
@@ -80,5 +74,9 @@ void BankClient::getAccounts(Account *accountList) {
     }
 
 
+}
+
+void BankClient::setClientNumberId(const string &clientNumberId) {
+    clientNumberID = clientNumberId;
 }
 

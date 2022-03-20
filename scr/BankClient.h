@@ -23,7 +23,8 @@ private:
     string clientEmailAddress;
     string clientPassword;
     string clientNumberID;
-    int clientPhoneNumber;
+    string clientPhoneNumber;
+
     Date clientBirthDate;
 
     int loanCount = 0;
@@ -49,9 +50,7 @@ public:
 
     const string &getClientEmailAddress() const;
 
-    int getClientPhoneNumber() const;
-
-    string createClientNumberID();
+    string getClientPhoneNumber() const;
 
     const string &getClientNumberId() const;
 
@@ -65,7 +64,7 @@ public:
 
     void getAccounts(Account *accountList);
 
-
+    void setClientNumberId(const string &clientNumberId);
 };
 
 

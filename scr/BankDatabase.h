@@ -36,7 +36,7 @@ public:
 
     void removeClient(BankClient Client);
 
-
+    string createClientNumberID();
 };
 
 
