@@ -14,7 +14,7 @@ BankClient::BankClient() {
 
 }
 
-BankClient::BankClient(string FName, string LName, string emailAddress, string password, int phoneNum, Date DOB) {
+BankClient::BankClient(string FName, string LName, string emailAddress, string password, string phoneNum, Date DOB) {
 
     clientFirstName = FName;
     clientLastName = LName;

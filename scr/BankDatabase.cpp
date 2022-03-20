@@ -54,10 +54,10 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
 
 void BankDatabases::loadAllData() {
 
-    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", 3234232, Date());
+    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232", Date());
     addNewClient(temp);
 
-    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", 3234232, Date());
+    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232", Date());
     addNewClient(temp1);
 
 }
@@ -86,7 +86,7 @@ void BankDatabases::saveAllData() {
             DataFile << endl;
 
 
-            DataFile << clientDataList[clientIndex].getAccountCount();
+            DataFile << clientDataList[clientIndex].getAccountCount() << endl;
 
             Account clientAccounts[clientDataList[clientIndex].getAccountCount()];
             clientDataList[clientIndex].getAccounts(clientAccounts);
