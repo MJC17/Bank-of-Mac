@@ -17,7 +17,7 @@ private:
 //    double getWithdrawlAmount(){return m_withdrawalAmount;};
     void deposit(double d);
     void withdrawal(double w);
-//    double getBalance();
+    double getBalance();
 //    void printAccount();
 };
 

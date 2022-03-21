@@ -47,10 +47,6 @@ public:
     double getDepositsAmount() const;
 
     void setDepositsAmount(double depositsAmount);
-
-
-
-
 };
 
 

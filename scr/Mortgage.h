@@ -13,6 +13,7 @@ class Mortgage : public Loan {
 
 public:
     Mortgage();
+    ~Mortgage();
     Mortgage(double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength);
     double getMonthlyPayment(){return m_monthlyPayment;};
     void setMonthlyPayment(double m){m_monthlyPayment = m;};

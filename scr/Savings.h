@@ -16,6 +16,7 @@ class Savings : public Account
 public:
 
     Savings();
+    ~Savings();
     Savings(string accountType, double balance, double growthRate, int compoundPeriod, double investment);
     double getGrowthRate(){return m_growthRate;};
     int getCompoundPeriod(){return m_compoundPeriod;};

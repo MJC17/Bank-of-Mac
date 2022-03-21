@@ -4,13 +4,12 @@
 
 #ifndef BANK_OF_MAC_CREDITCARD_H
 #define BANK_OF_MAC_CREDITCARD_H
-
 #include "Loan.h"
 class CreditCard {
     double m_monthlyLimit;
 public:
-//    CreditCard();
-//    CreditCard(double amountLoaned, Date dueDate, double interestRate, double monthlyLimit);
+    CreditCard();
+    CreditCard();
 };
 
 

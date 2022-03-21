@@ -26,4 +26,5 @@ void Mortgage::printLoan()
     cout<<"The interest rate is "<<getInterestRate()<<"%"<<endl;
 //    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << getDueDate() << "." <<endl;
 }
+Mortgage::~Mortgage() {}
 
