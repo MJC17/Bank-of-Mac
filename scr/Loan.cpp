@@ -16,7 +16,3 @@ Loan::Loan(double amountLoaned, Date dueDate, double interestRate) {
     m_interestRate = interestRate;
     m_dueDate = dueDate;
 }
-
-void Loan::printLoan() {
-
-}

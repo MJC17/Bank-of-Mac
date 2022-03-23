@@ -7,9 +7,14 @@ Mortgage::Mortgage()
 {
     m_monthlyPayment = 0.0;
 }
+Mortgage::~Mortgage()
+{
+
+}
 Mortgage::Mortgage(double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength): Loan(amountLoaned, dueDate, interestRate)
 {
     m_monthlyPayment = monthlyPayment;
+    m_mortgageLength = yearsLength;
 }
 double Mortgage::calculateTotal()
 {
@@ -24,7 +29,6 @@ void Mortgage::printLoan()
 {
     cout<<"Total mortgage is valued at $"<<getAmountLoaned()<<"."<<endl;
     cout<<"The interest rate is "<<getInterestRate()<<"%"<<endl;
-//    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << getDueDate() << "." <<endl;
+    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << Mortgage::getDueDate() << "." <<endl;
 }
-Mortgage::~Mortgage() {}
 

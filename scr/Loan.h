@@ -34,5 +34,5 @@ public:
 
     double getAmountLoaned() { return m_amountLoaned; };
 
-    virtual void printLoan();
+    virtual void printLoan() = 0;
 };
