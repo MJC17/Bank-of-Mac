@@ -7,9 +7,8 @@
 
 
 
-Savings::Savings(string accountType, double balance, double growthRate, int compoundPeriod, double investment): Account(accountType, balance)
+Savings::Savings(string accountType, double balance, Date open, double investment): Account(accountType, balance, open)
 {
-    m_growthRate = growthRate;
     m_investment = investment;
 }
 
@@ -19,6 +18,7 @@ double Savings::calculateFutureValue(int x)
     double total;
     double v = 1+(getGrowthRate()/100);
     total = m_investment*pow(v,x);
+    return total;
 }
 void Savings::printAccount()
 {

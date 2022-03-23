@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 class Account {
 
 private:
@@ -21,10 +20,12 @@ private:
     int transactionsCount;
     Transaction transactions[0];
 public:
-    Account(string accountType, double balance, Date openDate);
+    Account(string a, double b, Date open);
     Account();
+    string getAccountType(){return accountType;};
+    void setAccounntType(string a){accountType = a;};
     double getBalance(){return balance;};
-    virtual void printAccount();
+    virtual void printAccount() = 0;
  //   virtual void printAccountTransactions();
 };
 

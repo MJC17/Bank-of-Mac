@@ -7,10 +7,15 @@
 using namespace std;
 
 
-Account::Account(string accountType, double balance) {
-
+Account::Account(string a, double b, Date open)
+{
+    accountType = a;
+    balance = b;
+    openDate = open;
 }
-
-Account::Account() {
-
+Account::Account()
+{
+    accountType = "";
+    balance = 0.0;
+    transactionsCount = 0;
 }

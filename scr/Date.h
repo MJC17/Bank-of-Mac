@@ -38,9 +38,9 @@ public:
     string toString();
 };
 
-//std::ostream &operator<<(std::ostream &os, const Date &date) {
-//    os << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
-//    return os;
-//}
+std::ostream &operator<<(std::ostream &os, const Date &date) {
+   os << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
+   return os;
+}
 
 #endif //BANK_OF_MAC_DATE_H
