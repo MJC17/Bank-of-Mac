@@ -27,7 +27,7 @@ public:
     Account(string accountType, double balance);
 
     Account();
-
+    double getBalance(){return balance;};
 //
 //    virtual void printAccount();
 //    virtual void printAccountTransactions();

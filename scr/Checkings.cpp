@@ -12,14 +12,12 @@ Checkings::Checkings(string accountType, double balance, double witdrawalAmount)
 
 void Checkings::deposit(double d)
 {
-//    double addition = Account::getBalance() + d;
-//    Account::setBalance(addition);
+    Account::getBalance()+=d;
 }
 
 void Checkings::withdrawal(double w)
 {
-//    double subtract = Account::getBalance() - w;
-//    Account::setBalance(subtract);
+    Account::getBalance()-=w;
 }
 //void Checkings::printAccount()
 //{
