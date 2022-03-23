@@ -18,20 +18,14 @@ private:
     string accountType;
     Date openDate;
     double balance;
-
     int transactionsCount;
     Transaction transactions[0];
-
 public:
-
-    Account(string accountType, double balance);
-
+    Account(string accountType, double balance, Date openDate);
     Account();
     double getBalance(){return balance;};
-//
-//    virtual void printAccount();
-//    virtual void printAccountTransactions();
-
+    virtual void printAccount();
+ //   virtual void printAccountTransactions();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H
