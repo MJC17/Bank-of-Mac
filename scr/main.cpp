@@ -70,7 +70,6 @@ int main() {
         cout << "3) Deposit" << endl; // the client can deposit into any of their accounts
         cout << "4) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
         cout << "5) E-Transfer" << endl; // the client can transfer money from any of their accounts to another client at the bano
-        cout << "6) Open an account" << endl;
         cout << "0) Quit" << endl; // end / terminate the program
 
         int choice = 0;
