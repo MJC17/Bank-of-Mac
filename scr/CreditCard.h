@@ -5,8 +5,9 @@
 #ifndef BANK_OF_MAC_CREDITCARD_H
 #define BANK_OF_MAC_CREDITCARD_H\
 #include "Loan.h"
-
-class CreditCard {
+#pragma once
+class CreditCard: public Loan
+{
 public:
     CreditCard();
 };
