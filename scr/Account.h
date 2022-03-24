@@ -17,16 +17,25 @@ private:
     string accountType;
     Date openDate;
     double balance;
+public:
+    void setBalance(double balance);
+
+private:
     int transactionsCount;
     Transaction transactions[0];
 public:
     Account(string a, double b, Date open);
+
     Account();
-    string getAccountType(){return accountType;};
-    void setAccounntType(string a){accountType = a;};
-    double getBalance(){return balance;};
+
+    string getAccountType() { return accountType; };
+
+    void setAccounntType(string a) { accountType = a; };
+
+    double getBalance() { return balance; };
+
     virtual void printAccount() = 0;
- //   virtual void printAccountTransactions();
+    //   virtual void printAccountTransactions();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H
