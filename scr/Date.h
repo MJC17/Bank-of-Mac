@@ -5,6 +5,7 @@
 #ifndef BANK_OF_MAC_DATE_H
 #define BANK_OF_MAC_DATE_H
 #pragma once
+
 #include <ostream>
 #include <string>
 
@@ -39,8 +40,8 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &os, const Date &date) {
-   os << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
-   return os;
+    os << date.getDay() << "/" << date.getMonth() << "/" << date.getYear();
+    return os;
 }
 
 #endif //BANK_OF_MAC_DATE_H

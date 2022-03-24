@@ -42,6 +42,8 @@ BankClient *BankDatabases::getVerifedBankClient(string emailAddress, string pass
 
         }
     }
+
+    return 0;
 }
 
 string BankDatabases::encryptionPassword(string password) {

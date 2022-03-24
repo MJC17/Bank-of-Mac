@@ -20,6 +20,3 @@ Account::Account() {
     transactionsCount = 0;
 }
 
-void Account::setBalance(double balance) {
-    Account::balance = balance;
-}
