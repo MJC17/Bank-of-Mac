@@ -9,7 +9,6 @@ add_executable(Bank_of_Mac scr/main.cpp
         scr/Date.cpp scr/Date.h
         scr/Account.cpp scr/Account.h
         scr/Checkings.cpp scr/Checkings.h
-        scr/CreditCard.h scr/CreditCard.cpp
         scr/Date.cpp scr/Date.h
         scr/Loan.h scr/Loan.cpp
         scr/Mortgage.cpp scr/Mortgage.h
