@@ -7,6 +7,7 @@
 #include <iostream>
 using namespace std;
 #include "Account.h"
+#pragma once
 class Savings : public Account
 {
     double m_growthRate;

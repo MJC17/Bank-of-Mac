@@ -4,7 +4,7 @@
 
 #ifndef BANK_OF_MAC_LOAN_H
 #define BANK_OF_MAC_LOAN_H
-
+#pragma once
 #include "Account.h"
 #include <iostream>
 #include "Date.h"

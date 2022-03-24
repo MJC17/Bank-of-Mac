@@ -4,7 +4,7 @@
 
 #ifndef BANK_OF_MAC_DATE_H
 #define BANK_OF_MAC_DATE_H
-
+#pragma once
 #include <ostream>
 #include <string>
 

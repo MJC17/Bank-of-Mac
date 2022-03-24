@@ -5,7 +5,7 @@
 #ifndef BANK_OF_MAC_MORTGAGE_H
 #define BANK_OF_MAC_MORTGAGE_H
 #include "Loan.h"
-
+#pragma once
 class Mortgage : public Loan {
 
     double m_monthlyPayment;
