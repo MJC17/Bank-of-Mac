@@ -9,7 +9,6 @@
 class CreditCard {
 public:
     CreditCard();
-
 };
 
 

@@ -3,3 +3,7 @@
 //
 
 #include "CreditCard.h"
+CreditCard::CreditCard()
+{
+
+}

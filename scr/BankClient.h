@@ -29,7 +29,7 @@ private:
     Date clientBirthDate;
 
     int loanCount = 0;
-    Loan clientActiveLoan[5];
+    //Loan clientActiveLoan[5];
 
     int accountCount = 0;
     Account clientActiveAccount[5];
