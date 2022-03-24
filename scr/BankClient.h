@@ -10,6 +10,7 @@
 #include "Account.h"
 #include "CreditCard.h"
 #include "Date.h"
+#include "Loan.h"
 //#include "Loan.h"
 
 using namespace std;

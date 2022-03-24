@@ -8,7 +8,6 @@
 class CreditCard {
 public:
     CreditCard();
-    CreditCard(double amountLoaned, Date dueDate, double interestRate);
 
 };
 
