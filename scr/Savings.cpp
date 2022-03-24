@@ -24,6 +24,3 @@ void Savings::printAccount()
     cout<<"Your investment will grow at a"<<getGrowthRate()<<"% rate, compounded annually."<<endl;
 }
 
-Savings::Savings() {
-
-}
