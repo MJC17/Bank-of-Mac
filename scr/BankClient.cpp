@@ -61,9 +61,9 @@ int BankClient::getAccountCount() const {
     return accountCount;
 }
 
-int BankClient::getClientCreditCardCount() const {
+/*int BankClient::getClientCreditCardCount() const {
     return clientCreditCardCount;
-}
+}*/
 
 void BankClient::getAccounts(Account *accountList) {
 
