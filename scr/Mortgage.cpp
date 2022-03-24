@@ -3,10 +3,6 @@
 //
 
 #include "Mortgage.h"
-Mortgage::Mortgage()
-{
-    m_monthlyPayment = 0.0;
-}
 Mortgage::~Mortgage()
 {
 

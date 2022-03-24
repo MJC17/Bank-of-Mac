@@ -15,8 +15,7 @@ class Savings : public Account
     double m_investment;
 
 public:
-
-    Savings();
+    
     ~Savings();
     Savings(string accountType, double balance, Date open, double investment);
     double getGrowthRate(){return m_growthRate;};

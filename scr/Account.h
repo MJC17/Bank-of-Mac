@@ -21,7 +21,6 @@ private:
     Transaction transactions[0];
 public:
     Account(string a, double b, Date open);
-    Account();
     string getAccountType(){return accountType;};
     void setAccountType(string a){accountType = a;};
     double getBalance(){return balance;};

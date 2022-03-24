@@ -12,7 +12,6 @@ class Mortgage : public Loan {
     int m_mortgageLength;
 
 public:
-    Mortgage();
 
     ~Mortgage();
 
