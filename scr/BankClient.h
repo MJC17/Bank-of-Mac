@@ -8,7 +8,7 @@
 #include <string>
 
 #include "Account.h"
-#include "CreditCard.h"
+//#include "CreditCard.h"
 #include "Date.h"
 #include "Loan.h"
 //#include "Loan.h"
@@ -34,8 +34,8 @@ private:
     int accountCount = 0;
     Account clientActiveAccount[5];
 
-    int clientCreditCardCount = 0;
-    CreditCard clientActiveCreditCard[5];
+    //int clientCreditCardCount = 0;
+    //CreditCard clientActiveCreditCard[5];
 
 public:
 
