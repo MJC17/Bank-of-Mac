@@ -5,8 +5,6 @@
 #include "Savings.h"
 #include <math.h>
 
-
-
 Savings::Savings(string accountType, double balance, Date open, double investment): Account(accountType, balance, open)
 {
     m_investment = investment;

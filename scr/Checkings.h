@@ -10,8 +10,6 @@ class Checkings: public Account
 {
     double m_withdrawalAmount;
 private:
-
-    Checkings();
     Checkings(string accountType, double balance, Date open, double witdrawalAmount);
     void setWithdrawlAmount(double w){m_withdrawalAmount = w;};
     double getWithdrawlAmount(){return m_withdrawalAmount;};

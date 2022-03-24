@@ -23,7 +23,3 @@ void Checkings::printAccount()
 {
     cout<<"Your student checkings account has an updated balance of $"<<Checkings::getBalance()<<"."<<endl;
 }
-
-Checkings::Checkings() {
-
-}
