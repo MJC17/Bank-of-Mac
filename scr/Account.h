@@ -25,6 +25,7 @@ public:
     string getAccountType(){return accountType;};
     void setAccounntType(string a){accountType = a;};
     double getBalance(){return balance;};
+    void setBalance(double b){balance = b;};
     virtual void printAccount() = 0;
  //   virtual void printAccountTransactions();
 };

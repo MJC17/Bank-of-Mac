@@ -17,7 +17,7 @@ void Checkings::deposit(double d)
 
 void Checkings::withdrawal(double w)
 {
-    Checkings::getBalance()-=w;
+    Checkings::setBalance(Checkings::getBalance()-w);
 }
 void Checkings::printAccount()
 {
