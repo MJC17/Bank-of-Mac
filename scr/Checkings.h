@@ -5,7 +5,7 @@
 #ifndef BANK_OF_MAC_CHECKINGS_H
 #define BANK_OF_MAC_CHECKINGS_H
 #include "Account.h"
-
+#pragma once
 class Checkings: public Account
 {
     double m_withdrawalAmount;

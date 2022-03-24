@@ -12,7 +12,7 @@ Checkings::Checkings(string accountType, double balance, Date open, double witdr
 
 void Checkings::deposit(double d)
 {
-    Checkings::getBalance()+=d;
+    Checkings::setBalance(Checkings::getBalance()+d);
 }
 
 void Checkings::withdrawal(double w)

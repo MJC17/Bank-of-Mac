@@ -4,7 +4,7 @@
 
 #ifndef BANK_OF_MAC_TRANSACTION_H
 #define BANK_OF_MAC_TRANSACTION_H
-
+#pragma once
 #include "Date.h"
 #include <string>
 
