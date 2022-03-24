@@ -18,8 +18,6 @@ class Loan {
     double m_amountLoaned;
 
 public:
-    Loan();
-
     Loan(double amountLoaned, Date dueDate, double interestRate);
 
     void setLoanAmount(double loanAmount) { m_amountLoaned = loanAmount; };

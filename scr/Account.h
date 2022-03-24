@@ -23,11 +23,11 @@ public:
     Account(string a, double b, Date open);
     Account();
     string getAccountType(){return accountType;};
-    void setAccounntType(string a){accountType = a;};
+    void setAccountType(string a){accountType = a;};
     double getBalance(){return balance;};
     void setBalance(double b){balance = b;};
     //virtual void printAccount() = 0;
- //   virtual void printAccountTransactions();
+    //virtual void printAccountTransactions();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H
