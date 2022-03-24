@@ -23,4 +23,3 @@ void Savings::printAccount()
     cout<<"Your long term savings account currently has a balance of $"<<getInvestment()<<"."<<endl;
     cout<<"Your investment will grow at a"<<getGrowthRate()<<"% rate, compounded annually."<<endl;
 }
-
