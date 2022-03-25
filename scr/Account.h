@@ -11,27 +11,23 @@
 
 using namespace std;
 
-
 class Account {
 
 private:
     string accountType;
     Date openDate;
     double balance;
-
     int transactionsCount;
     Transaction transactions[0];
-
 public:
-
-    Account(string accountType, double balance);
-
     Account();
+    Account(string a, double b, Date open);
+    string getAccountType(){return accountType;};
+    void setAccountType(string a){accountType = a;};
     double getBalance(){return balance;};
-//
-//    virtual void printAccount();
-//    virtual void printAccountTransactions();
-
+    void setBalance(double b){balance = b;};
+    //virtual void printAccount() = 0;
+    //virtual void printAccountTransactions();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H
