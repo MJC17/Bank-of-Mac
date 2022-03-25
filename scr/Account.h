@@ -14,6 +14,8 @@ using namespace std;
 class Account {
 
 private:
+    Account();
+
     string accountType;
     Date openDate;
     double balance;
