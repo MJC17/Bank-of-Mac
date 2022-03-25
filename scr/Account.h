@@ -14,14 +14,13 @@ using namespace std;
 class Account {
 
 private:
-    Account();
-
     string accountType;
     Date openDate;
     double balance;
     int transactionsCount;
     Transaction transactions[0];
 public:
+    Account();
     Account(string a, double b, Date open);
     string getAccountType(){return accountType;};
     void setAccountType(string a){accountType = a;};
