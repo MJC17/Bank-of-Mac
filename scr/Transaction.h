@@ -40,7 +40,7 @@ public:
 
     void setAccountBalanceAmount(double accountBalanceAmount);
 
-    double getWithdrawalAmount()[return WithdrawalAmount;];
+    double getWithdrawalAmount(){return WithdrawalAmount;};
 
     void setWithdrawalAmount(double withdrawalAmount);
 
