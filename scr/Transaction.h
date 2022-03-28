@@ -24,27 +24,27 @@ private:
 
 public:
 
-    int getAccountId() const;
+    int getAccountId(){return AccountID;};
 
     void setAccountId(int accountId);
 
-    const Date &getTransactionDate() const;
+    Date getTransactionDate(){return transactionDate;};
 
-    void setTransactionDate(const Date &transactionDate);
+    void setTransactionDate(Date &transactionDate);
 
-    const string &getTransactionDesciption() const;
+    string getTransactionDesciption(){return transactionDesciption;};
 
-    void setTransactionDesciption(const string &transactionDesciption);
+    void setTransactionDesciption(string &transactionDesciption);
 
-    double getAccountBalanceAmount() const;
+    double getAccountBalanceAmount(){return accountBalanceAmount;};
 
     void setAccountBalanceAmount(double accountBalanceAmount);
 
-    double getWithdrawalAmount() const;
+    double getWithdrawalAmount(){return WithdrawalAmount;};
 
     void setWithdrawalAmount(double withdrawalAmount);
 
-    double getDepositsAmount() const;
+    double getDepositsAmount(){return depositsAmount;};
 
     void setDepositsAmount(double depositsAmount);
 };
