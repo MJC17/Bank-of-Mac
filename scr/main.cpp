@@ -74,22 +74,36 @@ int main() {
         int choice = 0;
         cin >> choice;
 
+        if (choice == 1)
+        {
+            //currentActiveClient->getAccounts();
 
-        if (choice == 1) {
+        }
+        else if (choice == 2)
+        {
 
+        }
+        else if (choice == 3)
+        {
 
-        } else if (choice == 2) {
+        }
+        else if (choice == 4)
+        {
 
-        } else if (choice == 3) {
+        }
+        else if (choice == 5)
+        {
 
-        } else if (choice == 4) {
-
-        } else if (choice == 0) {
+        }
+        else if (choice == 0)
+        {
             cout << "Thank you for using Bank of Mac, have a great day" << endl;
             database.saveAllData();
             break;
 
-        } else {
+        }
+        else
+        {
             cout << "Invalid selection. Try again!" << endl;
             cin >> choice;
         }
