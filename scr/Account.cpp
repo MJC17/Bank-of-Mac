@@ -3,28 +3,28 @@
 //
 
 #include "Account.h"
+#include "Transaction.h"
 #include <iostream>
 
 using namespace std;
 
+
 Account::Account() {
 
-
-    accountType = "";
+    transactionsCount = 0;
     balance = 0.0;
+    openDate = Date();
+    createNumberID();
 
 }
-
 
 double Account::getBalance() const {
     return balance;
 }
 
-void Account::setBalance(double balance) {
-    Account::balance = balance;
-}
 
 void Account::createNumberID() {
+
 
 }
 
@@ -36,16 +36,9 @@ void Account::setAccountType(const string &accountType) {
     Account::accountType = accountType;
 }
 
-const string &Account::getAccountNumberId() const {
-    return accountNumberID;
-}
+string Account::getOpenDate() const {
 
-void Account::setAccountNumberId(const string &accountNumberId) {
-    accountNumberID = accountNumberId;
-}
-
-const Date &Account::getOpenDate() const {
-    return openDate;
+    return this->openDate.toString();
 }
 
 void Account::setOpenDate(const Date &openDate) {
@@ -56,6 +49,36 @@ int Account::getTransactionsCount() const {
     return transactionsCount;
 }
 
-void Account::setTransactionsCount(int transactionsCount) {
-    Account::transactionsCount = transactionsCount;
+string Account::transactionHistroyDatabasePrint() {
+
+    string printOut;
+
+    for (int tranIndex = 0; tranIndex < transactionsCount; tranIndex++) {
+
+        printOut = printOut + transactions[tranIndex].toString();
+
+    }
+
+    return printOut;
 }
+
+
+void Account::addNewTransactios(Transaction t) {
+
+    transactions[transactionsCount] = t;
+    transactionsCount++;
+
+    recalculateAccountBalance();
+}
+
+void Account::recalculateAccountBalance() {
+
+    balance = 0.0;
+
+    for (int tranIndex = 0; tranIndex < transactionsCount; tranIndex++) {
+
+        balance = balance + transactions[tranIndex].getBalanceAmount();
+
+    }
+}
+

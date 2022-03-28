@@ -4,18 +4,19 @@
 
 #ifndef BANK_OF_MAC_CHECKINGS_H
 #define BANK_OF_MAC_CHECKINGS_H
+
 #include "Account.h"
+
 #pragma once
-class Checkings: public Account
-{
-    double m_withdrawalAmount;
+
+class Checkings : public Account {
+
 private:
-    Checkings(string accountType, double balance, Date open, double witdrawalAmount);
-    void setWithdrawlAmount(double w){m_withdrawalAmount = w;};
-    double getWithdrawlAmount(){return m_withdrawalAmount;};
-    void deposit(double d);
-    void withdrawal(double w);
-    void printAccount();
+    double m_withdrawalAmount;
+
+
+public:
+    Checkings();
 };
 
 

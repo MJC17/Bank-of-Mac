@@ -56,10 +56,10 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
 
 void BankDatabases::loadAllData() {
 
-    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232", Date());
+    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232");
     addNewClient(temp);
 
-    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232", Date());
+    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232");
     addNewClient(temp1);
 
 }
@@ -82,9 +82,6 @@ void BankDatabases::saveAllData() {
             DataFile << clientDataList[clientIndex].getClientNumberId() << "\t";
             DataFile << clientDataList[clientIndex].getClientPhoneNumber() << "\t";
 
-            Date clientDOB = clientDataList[clientIndex].getClientBirthDate();
-            DataFile << clientDOB.toString();
-
             DataFile << endl;
 
 
@@ -95,7 +92,11 @@ void BankDatabases::saveAllData() {
 
             for (int accIndex = 0; accIndex < clientDataList[clientIndex].getAccountCount(); accIndex++) {
 
-//                clientAccounts[accIndex].
+                DataFile << clientAccounts[accIndex].getAccountType() + "\t";
+                DataFile << std::to_string(clientAccounts[accIndex].getBalance()) + "\t";
+                DataFile << clientAccounts[accIndex].getOpenDate() << endl;
+                DataFile << clientAccounts[accIndex].getTransactionsCount() << endl;
+                DataFile << clientAccounts[accIndex].transactionHistroyDatabasePrint();
 
             }
 

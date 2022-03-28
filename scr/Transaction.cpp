@@ -5,30 +5,56 @@
 #include "Transaction.h"
 
 
-void Transaction::setAccountId(int accountId) {
-    AccountID = accountId;
+Transaction::Transaction(bool isDeposit, double amount, string description) {
+
+    if (isDeposit) {
+
+        transactionType = "Deposit";
+        balanceAmount = amount;
+
+    } else {
+        transactionType = "Withdrawal";
+        balanceAmount = amount * -1;
+
+    }
+
+    transactionDescription = description;
+
 }
 
-void Transaction::setTransactionDate(Date &transactionDate) {
+
+const string &Transaction::getTransactionType() const {
+    return transactionType;
+}
+
+void Transaction::setTransactionType(const string &transactionType) {
+    Transaction::transactionType = transactionType;
+}
+
+double Transaction::getBalanceAmount() const {
+    return balanceAmount;
+}
+
+void Transaction::setBalanceAmount(double amount) {
+    Transaction::balanceAmount = amount;
+}
+
+const string Transaction::getTransactionDate() const {
+    return transactionDate.toString();
+}
+
+void Transaction::setTransactionDate(const Date &transactionDate) {
     Transaction::transactionDate = transactionDate;
 }
 
-
-void Transaction::setTransactionDesciption(string &transactionDesciption) {
-    Transaction::transactionDesciption = transactionDesciption;
+const string &Transaction::getTransactionDesciption() const {
+    return transactionDescription;
 }
 
-
-void Transaction::setAccountBalanceAmount(double accountBalanceAmount) {
-    Transaction::accountBalanceAmount = accountBalanceAmount;
+void Transaction::setTransactionDesciption(const string &transactionDesciption) {
+    Transaction::transactionDescription = transactionDesciption;
 }
 
-
-void Transaction::setWithdrawalAmount(double withdrawalAmount) {
-    WithdrawalAmount = withdrawalAmount;
-}
-
-
-void Transaction::setDepositsAmount(double depositsAmount) {
-    Transaction::depositsAmount = depositsAmount;
+string Transaction::toString() {
+    return transactionType + "\t" + std::to_string(balanceAmount) + "\t" + transactionDescription + "\t" + getTransactionDate();
 }

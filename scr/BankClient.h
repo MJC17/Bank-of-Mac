@@ -26,8 +26,6 @@ private:
     string clientNumberID;
     string clientPhoneNumber;
 
-    Date clientBirthDate;
-
     int loanCount = 0;
     //Loan clientActiveLoan[5];
 
@@ -41,7 +39,7 @@ public:
 
     BankClient();
 
-    BankClient(string FName, string LName, string emailAddress, string password, string phone, Date DOB);
+    BankClient(string FName, string LName, string emailAddress, string password, string phone);
 
     const string &getClientPassword() const;
 
@@ -55,8 +53,6 @@ public:
 
     const string &getClientNumberId() const;
 
-    const Date &getClientBirthDate() const;
-
     int getLoanCount() const;
 
     int getAccountCount() const;
@@ -66,6 +62,9 @@ public:
     void getAccounts(Account *accountList);
 
     void setClientNumberId(const string &clientNumberId);
+
+    void addNewAccount(Account newAccount);
+
 };
 
 

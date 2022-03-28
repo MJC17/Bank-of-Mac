@@ -3,27 +3,28 @@
 //
 
 #include "BankClient.h"
+#include "Checkings.h"
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 
-BankClient::BankClient() {
-
-
-}
-
-BankClient::BankClient(string FName, string LName, string emailAddress, string password, string phoneNum, Date DOB) {
+BankClient::BankClient(string FName, string LName, string emailAddress, string password, string phoneNum) {
 
     clientFirstName = FName;
     clientLastName = LName;
     clientEmailAddress = emailAddress;
     clientPassword = password;
     clientPhoneNumber = phoneNum;
-    clientBirthDate = DOB;
+
+    addNewAccount(Checkings());
+    addNewAccount(Checkings());
+    addNewAccount(Checkings());
+
 
 }
+
 
 const string &BankClient::getClientPassword() const {
     return clientPassword;
@@ -49,10 +50,6 @@ const string &BankClient::getClientNumberId() const {
     return clientNumberID;
 }
 
-const Date &BankClient::getClientBirthDate() const {
-    return clientBirthDate;
-}
-
 int BankClient::getLoanCount() const {
     return loanCount;
 }
@@ -73,10 +70,20 @@ void BankClient::getAccounts(Account *accountList) {
 
     }
 
-
 }
 
 void BankClient::setClientNumberId(const string &clientNumberId) {
     clientNumberID = clientNumberId;
+}
+
+void BankClient::addNewAccount(Account newAccount) {
+
+    accountCount++;
+    clientActiveAccount[accountCount - 1] = newAccount;
+
+}
+
+BankClient::BankClient() {
+
 }
 

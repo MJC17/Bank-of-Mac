@@ -5,6 +5,7 @@
 #ifndef BANK_OF_MAC_TRANSACTION_H
 #define BANK_OF_MAC_TRANSACTION_H
 #pragma once
+
 #include "Date.h"
 #include <string>
 
@@ -12,41 +13,34 @@ using namespace std;
 
 class Transaction {
 
+
 private:
-
-    int AccountID;
+    string transactionType;
+    double balanceAmount;
     Date transactionDate;
-    string transactionDesciption;
-
-    double accountBalanceAmount;
-    double WithdrawalAmount;
-    double depositsAmount;
+    string transactionDescription;
 
 public:
 
-    int getAccountId(){return AccountID;};
+    Transaction(bool isDeposit, double amount, string description);
 
-    void setAccountId(int accountId);
+    const string &getTransactionType() const;
 
-    Date getTransactionDate(){return transactionDate;};
+    void setTransactionType(const string &transactionType);
 
-    void setTransactionDate(Date &transactionDate);
+    double getBalanceAmount() const;
 
-    string getTransactionDesciption(){return transactionDesciption;};
+    void setBalanceAmount(double amount);
 
-    void setTransactionDesciption(string &transactionDesciption);
+    const string getTransactionDate() const;
 
-    double getAccountBalanceAmount(){return accountBalanceAmount;};
+    void setTransactionDate(const Date &transactionDate);
 
-    void setAccountBalanceAmount(double accountBalanceAmount);
+    const string &getTransactionDesciption() const;
 
-    double getWithdrawalAmount(){return WithdrawalAmount;};
+    void setTransactionDesciption(const string &transactionDesciption);
 
-    void setWithdrawalAmount(double withdrawalAmount);
-
-    double getDepositsAmount(){return depositsAmount;};
-
-    void setDepositsAmount(double depositsAmount);
+    string toString();
 };
 
 

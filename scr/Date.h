@@ -35,7 +35,7 @@ public:
 
     void setDay(int day);
 
-    string toString();
+    string toString() const;
 };
 
 

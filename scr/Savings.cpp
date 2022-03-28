@@ -5,10 +5,10 @@
 #include "Savings.h"
 #include <math.h>
 
-//Savings::Savings(string accountType, double balance, Date open, double investment): Account(accountType, balance, open)
-//{
-//    m_investment = investment;
-//}
+Savings::Savings() : Account() {
+
+    setAccountType("Saving");
+}
 
 double Savings::calculateFutureValue(int x) {
     //for compound interest: Future value = investment(1+(growth rate/100))^# of compounding periods per year

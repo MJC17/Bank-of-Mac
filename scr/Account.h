@@ -17,43 +17,35 @@ class Account {
 private:
 
     string accountType;
-    string accountNumberID;
     Date openDate;
     double balance;
 
-    int transactionsCount;
+    int transactionsCount = 0;
     Transaction transactions[0];
 
 public:
-
 
     const string &getAccountType() const;
 
     void setAccountType(const string &accountType);
 
-    const string &getAccountNumberId() const;
-
-    void setAccountNumberId(const string &accountNumberId);
-
-    const Date &getOpenDate() const;
+    string getOpenDate() const;
 
     void setOpenDate(const Date &openDate);
 
     int getTransactionsCount() const;
 
-    void setTransactionsCount(int transactionsCount);
-
     double getBalance() const;
 
     void createNumberID();
 
-    void setBalance(double balance);
-
     Account();
 
-    //
-//    virtual void printAccount();
-//    virtual void printAccountTransactions();
+    string transactionHistroyDatabasePrint();
+
+    void addNewTransactios(Transaction t);
+
+    void recalculateAccountBalance();
 
 };
 

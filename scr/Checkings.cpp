@@ -3,21 +3,11 @@
 //
 
 #include "Checkings.h"
+#include "Account.h"
 
 
-//Checkings::Checkings(string accountType, double balance, Date open, double witdrawalAmount): Account(accountType, balance, open)
-//{
-//    m_withdrawalAmount = witdrawalAmount;
-//}
+Checkings::Checkings() : Account() {
 
-void Checkings::deposit(double d) {
-    Checkings::setBalance(Checkings::getBalance() + d);
-}
+    setAccountType("Checking");
 
-void Checkings::withdrawal(double w) {
-    Checkings::setBalance(Checkings::getBalance() - w);
-}
-
-void Checkings::printAccount() {
-    cout << "Your student checkings account has an updated balance of $" << Checkings::getBalance() << "." << endl;
 }
