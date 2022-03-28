@@ -7,16 +7,55 @@
 
 using namespace std;
 
-
-Account::Account(string a, double b, Date open) {
-    accountType = a;
-    balance = b;
-    openDate = open;
-}
-
 Account::Account() {
+
+
     accountType = "";
     balance = 0.0;
-    transactionsCount = 0;
+
 }
 
+
+double Account::getBalance() const {
+    return balance;
+}
+
+void Account::setBalance(double balance) {
+    Account::balance = balance;
+}
+
+void Account::createNumberID() {
+
+}
+
+const string &Account::getAccountType() const {
+    return accountType;
+}
+
+void Account::setAccountType(const string &accountType) {
+    Account::accountType = accountType;
+}
+
+const string &Account::getAccountNumberId() const {
+    return accountNumberID;
+}
+
+void Account::setAccountNumberId(const string &accountNumberId) {
+    accountNumberID = accountNumberId;
+}
+
+const Date &Account::getOpenDate() const {
+    return openDate;
+}
+
+void Account::setOpenDate(const Date &openDate) {
+    Account::openDate = openDate;
+}
+
+int Account::getTransactionsCount() const {
+    return transactionsCount;
+}
+
+void Account::setTransactionsCount(int transactionsCount) {
+    Account::transactionsCount = transactionsCount;
+}
