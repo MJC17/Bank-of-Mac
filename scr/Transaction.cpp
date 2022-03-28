@@ -5,49 +5,29 @@
 #include "Transaction.h"
 
 
-int Transaction::getAccountId() const {
-    return AccountID;
-}
-
 void Transaction::setAccountId(int accountId) {
     AccountID = accountId;
 }
 
-const Date &Transaction::getTransactionDate() const {
-    return transactionDate;
-}
-
-void Transaction::setTransactionDate(const Date &transactionDate) {
+void Transaction::setTransactionDate(Date &transactionDate) {
     Transaction::transactionDate = transactionDate;
 }
 
-const string &Transaction::getTransactionDesciption() const {
-    return transactionDesciption;
-}
 
-void Transaction::setTransactionDesciption(const string &transactionDesciption) {
+void Transaction::setTransactionDesciption(string &transactionDesciption) {
     Transaction::transactionDesciption = transactionDesciption;
 }
 
-double Transaction::getAccountBalanceAmount() const {
-    return accountBalanceAmount;
-}
 
 void Transaction::setAccountBalanceAmount(double accountBalanceAmount) {
     Transaction::accountBalanceAmount = accountBalanceAmount;
 }
 
-double Transaction::getWithdrawalAmount() const {
-    return WithdrawalAmount;
-}
 
 void Transaction::setWithdrawalAmount(double withdrawalAmount) {
     WithdrawalAmount = withdrawalAmount;
 }
 
-double Transaction::getDepositsAmount() const {
-    return depositsAmount;
-}
 
 void Transaction::setDepositsAmount(double depositsAmount) {
     Transaction::depositsAmount = depositsAmount;
