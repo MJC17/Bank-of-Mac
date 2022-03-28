@@ -32,11 +32,11 @@ public:
 
     void setTransactionDate(Date &transactionDate);
 
-    string getTransactionDesciption(){return transactionDesciption};
+    string getTransactionDesciption(){return transactionDesciption;};
 
     void setTransactionDesciption(string &transactionDesciption);
 
-    double getAccountBalanceAmount(){return accountBalanceAmount};
+    double getAccountBalanceAmount(){return accountBalanceAmount;};
 
     void setAccountBalanceAmount(double accountBalanceAmount);
 
