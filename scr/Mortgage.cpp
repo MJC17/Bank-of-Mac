@@ -18,7 +18,7 @@ double Mortgage::calculateTotal() {
     return total;
 }
 
-void Mortgage::calculateMonthlyPayment() {
+void Mortgage::calculatePayment() {
     m_monthlyPayment = (calculateTotal() / m_mortgageLength) / 12;
 }
 
