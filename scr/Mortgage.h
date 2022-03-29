@@ -30,7 +30,6 @@ public:
     double calculateTotal();
 
     void calculatePayment();
-
 };
 
 

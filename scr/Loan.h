@@ -25,13 +25,13 @@ public:
 
     void setDueDate(Date due) { m_dueDate = due; };
 
-    void interestRate(double rate) { m_interestRate = rate; };
-
     double getInterestRate() { return m_interestRate; };
 
     Date getDueDate() { return m_dueDate; };
 
     double getAmountLoaned() { return m_amountLoaned; };
+
+    void setInterestRate(double i){m_interestRate = i;};
 
     virtual void getLoanInfo() = 0;
 
