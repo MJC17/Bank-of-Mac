@@ -5,6 +5,7 @@
 #ifndef BANK_OF_MAC_LOAN_H
 #define BANK_OF_MAC_LOAN_H
 #pragma once
+
 #include "Account.h"
 #include <iostream>
 #include "Date.h"
@@ -27,11 +28,11 @@ public:
 
     double getInterestRate() { return m_interestRate; };
 
-    Date getDueDate() { return m_dueDate; };
+    string getDueDate();
 
     double getAmountLoaned() { return m_amountLoaned; };
 
-    void setInterestRate(double i){m_interestRate = i;};
+    void setInterestRate(double i) { m_interestRate = i; };
 
     virtual void getLoanInfo() = 0;
 

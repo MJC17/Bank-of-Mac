@@ -47,7 +47,7 @@ public:
 
     void recalculateAccountBalance();
 
-    virtual void getAccountInfo() = 0;
+    virtual void getAccountInfo();
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H

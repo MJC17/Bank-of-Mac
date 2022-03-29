@@ -25,5 +25,5 @@ void Mortgage::calculatePayment() {
 void Mortgage::getLoanInfo() {
     cout << "Total mortgage is valued at $" << getAmountLoaned() << "." << endl;
     cout << "The interest rate is " << getInterestRate() << "%" << endl;
-    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << Mortgage::getDueDate()\ << "." <<endl;
+    cout << "A grand total of " << Mortgage::calculateTotal() << " is to be repaid by " << Mortgage::getDueDate() << "." << endl;
 }

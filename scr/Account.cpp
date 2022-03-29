@@ -82,3 +82,7 @@ void Account::recalculateAccountBalance() {
     }
 }
 
+void Account::getAccountInfo() {
+
+}
+

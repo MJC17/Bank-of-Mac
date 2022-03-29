@@ -10,3 +10,7 @@ Loan::Loan(string type, double amountLoaned, Date dueDate, double interestRate) 
     m_dueDate = dueDate;
     loanType = type;
 }
+
+string Loan::getDueDate() {
+    return this->m_dueDate.toString();
+}
