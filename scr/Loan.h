@@ -13,12 +13,13 @@ using namespace std;
 #endif //BANK_OF_MAC_LOAN_H
 
 class Loan {
+    string loanType;
     double m_interestRate;
     Date m_dueDate;
     double m_amountLoaned;
 
 public:
-    Loan(double amountLoaned, Date dueDate, double interestRate);
+    Loan(string type, double amountLoaned, Date dueDate, double interestRate);
 
     void setLoanAmount(double loanAmount) { m_amountLoaned = loanAmount; };
 
@@ -32,7 +33,7 @@ public:
 
     double getAmountLoaned() { return m_amountLoaned; };
 
-    virtual void printLoan() = 0;
+    virtual void getLoanInfo() = 0;
 
     virtual void calculatePayment() = 0;
 };

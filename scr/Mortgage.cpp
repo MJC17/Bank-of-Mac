@@ -8,7 +8,7 @@ Mortgage::~Mortgage() {
 
 }
 
-Mortgage::Mortgage(double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength) : Loan(amountLoaned, dueDate, interestRate) {
+Mortgage::Mortgage(string type, double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength) : Loan(type, amountLoaned, dueDate, interestRate) {
     m_monthlyPayment = monthlyPayment;
     m_mortgageLength = yearsLength;
 }

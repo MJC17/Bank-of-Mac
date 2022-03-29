@@ -15,7 +15,7 @@ public:
 
     ~Mortgage();
 
-    Mortgage(double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength);
+    Mortgage(string type, double amountLoaned, Date dueDate, double interestRate, double monthlyPayment, int yearsLength);
 
     double getMonthlyPayment(){return m_monthlyPayment;};
 
@@ -25,7 +25,7 @@ public:
 
     void setMortgageLength(int l){m_mortgageLength = l;};
 
-    void printLoan();
+    void getLoanInfo();
 
     double calculateTotal();
 
