@@ -22,9 +22,9 @@ void Mortgage::calculatePayment() {
     m_monthlyPayment = (calculateTotal() / m_mortgageLength) / 12;
 }
 
-void Mortgage::printLoan() {
+void Mortgage::getLoanInfo() {
     cout << "Total mortgage is valued at $" << getAmountLoaned() << "." << endl;
     cout << "The interest rate is " << getInterestRate() << "%" << endl;
-//    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << Mortgage::getDueDate()\ << "." <<endl;
+    cout<<"A grand total of "<<Mortgage::calculateTotal() << " is to be repaid by " << Mortgage::getDueDate()\ << "." <<endl;
 }
 
