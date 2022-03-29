@@ -18,7 +18,7 @@ double Savings::calculateFutureValue(int x) {
     return total;
 }
 
-void Savings::printAccount() {
+void Savings::getAccountInfo() {
     cout << "Your long term savings account currently has a balance of $" << getInvestment() << "." << endl;
     cout << "Your investment will grow at a" << getGrowthRate() << "% rate, compounded annually." << endl;
 }

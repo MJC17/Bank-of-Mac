@@ -11,3 +11,7 @@ Checkings::Checkings() : Account() {
     setAccountType("Checking");
 
 }
+
+void Checkings::getAccountInfo() {
+    cout<<"Your checkings account has a balance of $"<<Checkings::getBalance()<<endl;
+}

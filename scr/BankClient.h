@@ -31,14 +31,12 @@ private:
 
     int accountCount = 0;
     Account clientActiveAccount[5];
-
     //int clientCreditCardCount = 0;
     //CreditCard clientActiveCreditCard[5];
 
 public:
 
     BankClient();
-
     BankClient(string FName, string LName, string emailAddress, string password, string phone);
 
     const string &getClientPassword() const;

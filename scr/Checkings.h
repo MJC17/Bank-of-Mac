@@ -11,12 +11,9 @@
 
 class Checkings : public Account {
 
-private:
-    double m_withdrawalAmount;
-
-
 public:
     Checkings();
+    void getAccountInfo();
 };
 
 
