@@ -36,6 +36,7 @@ public:
 
     void removeClient(BankClient Client);
 
+    void loadAccountTransaction(Account *currentLoadingAccount, fstream *OUTFILE);
 
     string createClientNumberID();
 };

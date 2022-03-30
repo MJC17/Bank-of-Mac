@@ -10,6 +10,11 @@ Savings::Savings() : Account() {
     setAccountType("Saving");
 }
 
+Savings::Savings(double currentBalance, Date openedDate, int transactionCount) : Account(currentBalance, openedDate, transactionCount) {
+
+    setAccountType("Saving");
+}
+
 double Savings::calculateFutureValue(int x) {
     //for compound interest: Future value = investment(1+(growth rate/100))^# of compounding periods per year
     double total;

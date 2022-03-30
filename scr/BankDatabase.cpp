@@ -5,14 +5,20 @@
 #include <iostream>
 #include <fstream>
 #include "BankDatabase.h"
+#include "Checkings.h"
 
 BankDatabases::BankDatabases() {
 
 //    cout << "Testing" << endl;
     srand(time(0));
     loadAllData();
-    saveAllData();
+//    saveAllData();
 
+    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232");
+    addNewClient(temp);
+
+    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232");
+    addNewClient(temp1);
 
 }
 
@@ -56,11 +62,67 @@ string BankDatabases::dencryptionPassword(string encryptionPassword) {
 
 void BankDatabases::loadAllData() {
 
-    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232");
-    addNewClient(temp);
+    fstream DataFile = fstream("Data.txt", ios::in);
 
-    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232");
-    addNewClient(temp1);
+
+    if (DataFile) {
+
+        int clientCount;
+        DataFile >> clientCount;
+
+        for (int clientIndex = 0; clientIndex < clientCount; clientIndex++) {
+
+            string FName, LName, email, pass, numID, phoneNum;
+
+            DataFile >> FName;
+            DataFile >> LName;
+            DataFile >> email;
+            DataFile >> pass;
+            DataFile >> numID;
+            DataFile >> phoneNum;
+
+            BankClient currentLoadingClient = BankClient(FName, LName, email, pass, numID, phoneNum);
+
+            int currentClientAccountCount;
+            DataFile >> currentClientAccountCount;
+
+            for (int accIndex = 0; accIndex < currentClientAccountCount; accIndex++) {
+
+                string currentAccountType;
+                DataFile >> currentAccountType;
+
+                cout << currentAccountType;
+
+                if (currentAccountType == "Checking") {
+
+                    string openDate;
+                    double balance;
+                    int transactionsCount = 0;
+
+                    DataFile >> balance;
+                    DataFile >> openDate;
+
+//                    cout << openDate;
+
+                    Checkings currentLoadingAccount = Checkings(balance, Date(openDate), transactionsCount);
+                    loadAccountTransaction(&currentLoadingAccount, &DataFile);
+                    currentLoadingClient.addNewAccount(currentLoadingAccount);
+
+                } else if (currentAccountType == "Savings") {
+
+
+                }
+            }
+
+            addNewClient(currentLoadingClient);
+        }
+
+    } else {
+        cout << "Error: Could not find Data.txt" << endl;
+    }
+
+    DataFile.close();
+
 
 }
 
@@ -92,12 +154,9 @@ void BankDatabases::saveAllData() {
 
             for (int accIndex = 0; accIndex < clientDataList[clientIndex].getAccountCount(); accIndex++) {
 
-                DataFile << clientAccounts[accIndex].getAccountType() + "\t";
-                DataFile << std::to_string(clientAccounts[accIndex].getBalance()) + "\t";
-                DataFile << clientAccounts[accIndex].getOpenDate() << endl;
+                DataFile << clientAccounts[accIndex].printAccount() << endl;
                 DataFile << clientAccounts[accIndex].getTransactionsCount() << endl;
                 DataFile << clientAccounts[accIndex].transactionHistroyDatabasePrint();
-
             }
 
         }
@@ -114,8 +173,6 @@ void BankDatabases::addNewClient(BankClient newClient) {
 
     newClient.setClientNumberId(createClientNumberID());
 
-    bankCliendCount++;
-    clientDataList[bankCliendCount - 1] = newClient;
 
 }
 
@@ -145,5 +202,35 @@ string BankDatabases::createClientNumberID() {
         }
     }
     return clientNumberID;
+
+}
+
+void BankDatabases::loadAccountTransaction(Account *currentLoadingAccount, fstream *OUTFILE) {
+
+    int transCount;
+    *OUTFILE >> transCount;
+
+    cout << transCount;
+
+    for (int tranIndex = 0; tranIndex < transCount; tranIndex++) {
+
+        string transType, discript;
+        double transAmount;
+
+        *OUTFILE << transType;
+        *OUTFILE << transAmount;
+        *OUTFILE << discript;
+
+        if (transType == "Deposit") {
+
+            currentLoadingAccount->addNewTransactios(Transaction(true, transAmount, discript));
+
+        } else {
+
+            currentLoadingAccount->addNewTransactios(Transaction(false, transAmount, discript));
+
+        }
+    }
+
 
 }

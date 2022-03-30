@@ -3,8 +3,10 @@
 //
 
 #include <ctime>
-
+#include <string>
 #include "Date.h"
+
+using namespace std;
 
 Date::Date() {
 
@@ -20,6 +22,19 @@ Date::Date(int y, int m, int d) {
     year = y;
     month = m;
     day = d;
+}
+
+Date::Date(string dateString) {
+
+//    string delimiter = "/";
+//
+//    size_t pos = 0;
+//    std::string token;
+//        token = dateString.substr(0, pos);
+//
+//    year = std::stoi(dateString.substr(0, dateString.find("/")));
+//    month = std::stoi(dateString.substr(1, dateString.find("/")));
+
 }
 
 int Date::getYear() const {
