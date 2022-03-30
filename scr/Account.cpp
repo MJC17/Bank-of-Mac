@@ -18,6 +18,14 @@ Account::Account() {
 
 }
 
+Account::Account(double currentBalance, Date openedDate, int transactionCount) {
+
+    transactionsCount = transactionCount;
+    balance = currentBalance;
+    openDate = openedDate;
+
+}
+
 double Account::getBalance() const {
     return balance;
 }
@@ -82,7 +90,15 @@ void Account::recalculateAccountBalance() {
     }
 }
 
+
 void Account::getAccountInfo() {
 
 }
+
+string Account::printAccount() {
+
+    return accountType + "\t" + std::to_string(balance) + "\t" + openDate.toString() + "\t";
+}
+
+
 

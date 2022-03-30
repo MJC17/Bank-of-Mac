@@ -37,7 +37,10 @@ private:
 public:
 
     BankClient();
+
     BankClient(string FName, string LName, string emailAddress, string password, string phone);
+
+    BankClient(string FName, string LName, string emailAddress, string password, string numID, string phoneNum);
 
     const string &getClientPassword() const;
 

@@ -18,9 +18,16 @@ BankClient::BankClient(string FName, string LName, string emailAddress, string p
     clientPassword = password;
     clientPhoneNumber = phoneNum;
 
-    addNewAccount(Checkings());
-    addNewAccount(Checkings());
-    addNewAccount(Checkings());
+}
+
+BankClient::BankClient(string FName, string LName, string emailAddress, string password, string numID, string phoneNum) {
+
+    clientFirstName = FName;
+    clientLastName = LName;
+    clientEmailAddress = emailAddress;
+    clientPassword = password;
+    clientNumberID = numID;
+    clientPhoneNumber = phoneNum;
 
 
 }

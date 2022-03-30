@@ -41,9 +41,13 @@ public:
 
     Account();
 
+    Account(double currentBalance, Date openedDate, int transactionCount);
+
     string transactionHistroyDatabasePrint();
 
     void addNewTransactios(Transaction t);
+
+    virtual string printAccount();
 
     void recalculateAccountBalance();
 
