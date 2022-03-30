@@ -85,8 +85,8 @@ void BankClient::setClientNumberId(const string &clientNumberId) {
 
 void BankClient::addNewAccount(Account newAccount) {
 
+    clientActiveAccount[accountCount] = newAccount;
     accountCount++;
-    clientActiveAccount[accountCount - 1] = newAccount;
 
 }
 

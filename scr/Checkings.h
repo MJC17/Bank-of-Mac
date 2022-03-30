@@ -14,7 +14,7 @@ class Checkings : public Account {
 public:
     Checkings();
 
-    Checkings(double currentBalance, Date openedDate, int transactionCount);
+    Checkings(double currentBalance, Date openedDate, string ID);
 
     void getAccountInfo();
 };

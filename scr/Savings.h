@@ -23,7 +23,7 @@ public:
 
     Savings();
 
-    Savings(double currentBalance, Date openedDate, int transactionCount);
+    Savings(double currentBalance, Date openedDate, string ID);
 
     double getGrowthRate() { return m_growthRate; };
 

@@ -11,15 +11,9 @@ BankDatabases::BankDatabases() {
 
 //    cout << "Testing" << endl;
     srand(time(0));
+
     loadAllData();
-//    saveAllData();
-
-    BankClient temp = BankClient("Marcus", "Cameron", "Test", "Test", "3234232");
-    addNewClient(temp);
-
-    BankClient temp1 = BankClient("Admin", "Admin", "Admin", "Test", "3234232");
-    addNewClient(temp1);
-
+    saveAllData();
 }
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
@@ -53,14 +47,6 @@ BankClient *BankDatabases::getVerifedBankClient(string emailAddress, string pass
     return 0;
 }
 
-string BankDatabases::encryptionPassword(string password) {
-    return std::string();
-}
-
-string BankDatabases::dencryptionPassword(string encryptionPassword) {
-    return std::string();
-}
-
 void BankDatabases::loadAllData() {
 
     fstream DataFile = fstream("Data.txt", ios::in);
@@ -87,24 +73,25 @@ void BankDatabases::loadAllData() {
             int currentClientAccountCount;
             DataFile >> currentClientAccountCount;
 
+
             for (int accIndex = 0; accIndex < currentClientAccountCount; accIndex++) {
 
                 string currentAccountType;
                 DataFile >> currentAccountType;
 
+
                 if (currentAccountType == "Checking") {
 
-                    string openDate;
+                    string openDate, currentAccountID;
                     double balance;
-                    int transactionsCount = 0;
 
+                    DataFile >> currentAccountID;
                     DataFile >> balance;
                     DataFile >> openDate;
 
-//                    cout << openDate;
-
-                    Checkings currentLoadingAccount = Checkings(balance, Date(openDate), transactionsCount);
+                    Checkings currentLoadingAccount = Checkings(balance, Date(openDate), currentAccountID);
                     loadAccountTransaction(&currentLoadingAccount, &DataFile);
+
                     currentLoadingClient.addNewAccount(currentLoadingAccount);
 
                 } else if (currentAccountType == "Savings") {
@@ -128,7 +115,6 @@ void BankDatabases::loadAllData() {
 void BankDatabases::saveAllData() {
 
     fstream DataFile = fstream("Data.txt", ios::out);
-
 
     if (DataFile) {
 
@@ -155,7 +141,9 @@ void BankDatabases::saveAllData() {
 
                 DataFile << clientAccounts[accIndex].printAccount() << endl;
                 DataFile << clientAccounts[accIndex].getTransactionsCount() << endl;
+
                 DataFile << clientAccounts[accIndex].transactionHistroyDatabasePrint();
+
             }
 
         }
@@ -172,10 +160,8 @@ void BankDatabases::addNewClient(BankClient newClient) {
 
     newClient.setClientNumberId(createClientNumberID());
 
+    clientDataList[bankCliendCount] = newClient;
     bankCliendCount++;
-    clientDataList[bankCliendCount - 1] = newClient;
-
-
 }
 
 void BankDatabases::removeClient(BankClient Client) {
@@ -212,24 +198,24 @@ void BankDatabases::loadAccountTransaction(Account *currentLoadingAccount, fstre
     int transCount;
     *OUTFILE >> transCount;
 
-    cout << transCount;
+    for (int tranIndex = 0; tranIndex < 3; tranIndex++) {
 
-    for (int tranIndex = 0; tranIndex < transCount; tranIndex++) {
-
-        string transType, discript;
+        string transType, discript, date;
         double transAmount;
 
-        *OUTFILE << transType;
-        *OUTFILE << transAmount;
-        *OUTFILE << discript;
+        *OUTFILE >> transType;
+        *OUTFILE >> transAmount;
+        *OUTFILE >> discript;
+        *OUTFILE >> date;
 
         if (transType == "Deposit") {
 
-            currentLoadingAccount->addNewTransactios(Transaction(true, transAmount, discript));
+            currentLoadingAccount->addNewTransactios(Transaction(true, transAmount, discript, Date(date)));
+
 
         } else {
 
-            currentLoadingAccount->addNewTransactios(Transaction(false, transAmount, discript));
+            currentLoadingAccount->addNewTransactios(Transaction(false, transAmount, discript, Date(date)));
 
         }
     }

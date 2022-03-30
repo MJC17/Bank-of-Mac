@@ -24,10 +24,6 @@ public:
 
     BankClient *getVerifedBankClient(string emailAddress, string password);
 
-    string encryptionPassword(string password);
-
-    string dencryptionPassword(string encryptionPassword);
-
     void loadAllData();
 
     void saveAllData();

@@ -22,7 +22,9 @@ private:
 
 public:
 
-    Transaction(bool isDeposit, double amount, string description);
+    Transaction();
+
+    Transaction(bool isDeposit, double amount, string description, Date transDate);
 
     const string &getTransactionType() const;
 

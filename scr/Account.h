@@ -17,11 +17,13 @@ class Account {
 private:
 
     string accountType;
+    string accountID;
+
     Date openDate;
     double balance;
 
     int transactionsCount = 0;
-    Transaction transactions[0];
+    Transaction transactions[25];
 
 public:
 
@@ -37,11 +39,9 @@ public:
 
     double getBalance() const;
 
-    void createNumberID();
-
     Account();
 
-    Account(double currentBalance, Date openedDate, int transactionCount);
+    Account(double currentBalance, Date openedDate, string ID);
 
     string transactionHistroyDatabasePrint();
 
@@ -52,6 +52,14 @@ public:
     void recalculateAccountBalance();
 
     virtual void getAccountInfo();
+
+    const string &getAccountId() const;
+
+    void setAccountId(const string &accountId);
+
+
+    void createAccountID();
+
 };
 
 #endif //BANK_OF_MAC_ACCOUNT_H

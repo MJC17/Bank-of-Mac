@@ -9,12 +9,14 @@
 Checkings::Checkings() : Account() {
 
     setAccountType("Checking");
+    createAccountID();
 
 }
 
-Checkings::Checkings(double currentBalance, Date openedDate, int transactionCount) : Account(currentBalance, openedDate, transactionCount) {
+Checkings::Checkings(double currentBalance, Date openedDate, string ID) : Account(currentBalance, openedDate, ID) {
 
     setAccountType("Checking");
+    setAccountId(ID);
 
 }
 

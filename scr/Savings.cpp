@@ -8,11 +8,14 @@
 Savings::Savings() : Account() {
 
     setAccountType("Saving");
+    createAccountID();
+
 }
 
-Savings::Savings(double currentBalance, Date openedDate, int transactionCount) : Account(currentBalance, openedDate, transactionCount) {
+Savings::Savings(double currentBalance, Date openedDate, string ID) : Account(currentBalance, openedDate, ID) {
 
     setAccountType("Saving");
+    setAccountId(ID);
 }
 
 double Savings::calculateFutureValue(int x) {

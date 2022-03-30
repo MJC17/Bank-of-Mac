@@ -5,7 +5,9 @@
 #include "Transaction.h"
 
 
-Transaction::Transaction(bool isDeposit, double amount, string description) {
+Transaction::Transaction() {}
+
+Transaction::Transaction(bool isDeposit, double amount, string description, Date transDate) {
 
     if (isDeposit) {
 
@@ -58,3 +60,5 @@ void Transaction::setTransactionDesciption(const string &transactionDesciption) 
 string Transaction::toString() {
     return transactionType + "\t" + std::to_string(balanceAmount) + "\t" + transactionDescription + "\t" + getTransactionDate();
 }
+
+
