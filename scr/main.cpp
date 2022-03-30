@@ -100,13 +100,14 @@ int main() {
                 cout << "Invalid selection. Try again!" << endl;
                 cin >> choice2;
             }
+        }
     }
     else
     {
         cout<<"Please enter the following information."<<endl;
         cout<<"First Name: ";
         string fname, lname, email, password, phone;
-        cin<<fname;
+        cin>>fname;
         skip();
         cout<<"Last Name: ";
         cin>>lname;
