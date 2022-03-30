@@ -100,7 +100,8 @@ int main()
                 // bring up the active accounts
                 cout<<"How much would you like to withdrawal?"<<endl;
                 cin>>withdrawalAmount;
-                //  use setBalance(getBalance-withdrawalAmount);
+                //  use .setBalance(getBalance-withdrawalAmount);
+                cout<<"Amount withdrawled. Your new balance is $"<</*getBalance*/endl;
             }
             else if (choice2 == 3)
             {
@@ -147,6 +148,7 @@ int main()
         cout<<"Phone number: ";
         cin>>phone;
         BankClient a(fname,lname,email,password,phone);
+
     }
 }
 void printLogo()
