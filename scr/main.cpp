@@ -15,7 +15,8 @@ void skip();
 using namespace std;
 
 
-int main() {
+int main()
+{
 
     BankDatabases database = BankDatabases();
 
@@ -37,7 +38,8 @@ int main() {
     {
         cout << "----- Login -----" << endl;
 
-        while (true) {
+        while (true)
+        {
 
             cout << "Enter Email: ";
             cin >> emailAddressInput;
@@ -48,24 +50,30 @@ int main() {
 
             loginAttemptCount++;
 
-            if (database.verifyClient(emailAddressInput, passwordInput)) {
+            if (database.verifyClient(emailAddressInput, passwordInput))
+            {
 
                 currentActiveClient = database.getVerifedBankClient(emailAddressInput, passwordInput);
                 system("clear");
                 break;
 
-            } else if (loginAttemptCount == 5) {
+            }
+            else if (loginAttemptCount == 5)
+            {
                 cout << "Sorry, you have attempted to login too many times. Ending Program, GOODBYE!" << endl;
                 exit(0);
 
-            } else {
+            }
+            else
+            {
                 cout << "Sorry, your login entry doesn't match our records. Please try again. (" << 5 - loginAttemptCount << " attempts left)" << endl;
 
             }
         }
 
 
-        while (true) {
+        while (true)
+        {
 
             cout << "Hello, " << currentActiveClient->getClientFirstName() << " " << currentActiveClient->getClientLastName() << endl;
             cout << "PLEASE SELECT AN OPTION:" << endl;
@@ -80,29 +88,42 @@ int main() {
             int choice2 = 0;
             cin >> choice2;
 
-            if (choice2 == 1) {
+            if (choice2 == 1)
+            {
                 //currentActiveClient->getAccounts();
 
-            } else if (choice2 == 2) {
+            }
+            else if (choice2 == 2)
+            {
 
-            } else if (choice2 == 3) {
+            }
+            else if (choice2 == 3)
+            {
 
-            } else if (choice2 == 4) {
+            }
+            else if (choice2 == 4)
+            {
 
-            } else if (choice2 == 5) {
+            }
+            else if (choice2 == 5)
+            {
 
-            } else if (choice2 == 0) {
+            }
+            else if (choice2 == 0)
+            {
                 cout << "Thank you for using Bank of Mac, have a great day" << endl;
                 database.saveAllData();
                 break;
 
-            } else {
+            }
+            else
+            {
                 cout << "Invalid selection. Try again!" << endl;
                 cin >> choice2;
             }
         }
     }
-    else
+    else if (choice==2)
     {
         cout<<"Please enter the following information."<<endl;
         cout<<"First Name: ";
