@@ -95,7 +95,12 @@ int main()
             }
             else if (choice2 == 2)
             {
-
+                double withdrawalAmount = 0.0;
+                cout<<"From which account would you like to withdrawal?"<<endl;
+                // bring up the active accounts
+                cout<<"How much would you like to withdrawal?"<<endl;
+                cin>>withdrawalAmount;
+                //  use setBalance(getBalance-withdrawalAmount);
             }
             else if (choice2 == 3)
             {
@@ -143,7 +148,6 @@ int main()
         BankClient a(fname,lname,email,password,phone);
     }
 }
-
 void printLogo()
 {
 
