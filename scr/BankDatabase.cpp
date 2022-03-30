@@ -24,6 +24,7 @@ BankDatabases::BankDatabases() {
 
 bool BankDatabases::verifyClient(string emailAddress, string password) {
 
+
     for (int i = 0; i < bankCliendCount; i++) {
 
         if (clientDataList[i].getClientEmailAddress() == emailAddress &&
@@ -90,8 +91,6 @@ void BankDatabases::loadAllData() {
 
                 string currentAccountType;
                 DataFile >> currentAccountType;
-
-                cout << currentAccountType;
 
                 if (currentAccountType == "Checking") {
 
@@ -172,6 +171,9 @@ void BankDatabases::saveAllData() {
 void BankDatabases::addNewClient(BankClient newClient) {
 
     newClient.setClientNumberId(createClientNumberID());
+
+    bankCliendCount++;
+    clientDataList[bankCliendCount - 1] = newClient;
 
 
 }
