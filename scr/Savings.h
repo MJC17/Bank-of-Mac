@@ -23,6 +23,8 @@ public:
 
     Savings();
 
+    Savings(double currentBalance, Date openedDate, int transactionCount);
+
     double getGrowthRate() { return m_growthRate; };
 
     int getCompoundPeriod() { return m_compoundPeriod; };

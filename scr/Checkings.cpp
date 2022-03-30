@@ -12,6 +12,13 @@ Checkings::Checkings() : Account() {
 
 }
 
-void Checkings::getAccountInfo() {
-    cout<<"Your checkings account has a balance of $"<<Checkings::getBalance()<<endl;
+Checkings::Checkings(double currentBalance, Date openedDate, int transactionCount) : Account(currentBalance, openedDate, transactionCount) {
+
+    setAccountType("Checking");
+
 }
+
+void Checkings::getAccountInfo() {
+    cout << "Your checkings account has a balance of $" << Checkings::getBalance() << endl;
+}
+

@@ -23,6 +23,8 @@ public:
 
     Date(int year, int month, int day);
 
+    Date(string dateString);
+
     int getYear() const;
 
     void setYear(int year);
