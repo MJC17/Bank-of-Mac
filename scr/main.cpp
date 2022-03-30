@@ -105,7 +105,11 @@ int main()
             }
             else if (choice2 == 3)
             {
-
+                double depositAmount = 0.0;
+                cout<<"To which account would you like to deposit?"<<endl;
+                cin>>depositAmount;
+                // use .setBalance(.getBalance + depositAmount)
+                cout<<"Amount deposited. Your new balance is $"<</*getBalance*/endl;
             }
             else if (choice2 == 4)
             {
