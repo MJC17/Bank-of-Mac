@@ -26,9 +26,6 @@ private:
     string clientNumberID;
     string clientPhoneNumber;
 
-    int loanCount = 0;
-    //Loan clientActiveLoan[5];
-
     int accountCount = 0;
     Account clientActiveAccount[5];
     //int clientCreditCardCount = 0;

@@ -43,7 +43,6 @@ Date::Date(string dateString) {
 
     year = stoi(s);
 
-//    cout << year << endl;
 }
 
 int Date::getYear() const {

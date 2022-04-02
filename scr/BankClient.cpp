@@ -18,6 +18,8 @@ BankClient::BankClient(string FName, string LName, string emailAddress, string p
     clientPassword = password;
     clientPhoneNumber = phoneNum;
 
+    addNewAccount(Checkings());
+
 }
 
 BankClient::BankClient(string FName, string LName, string emailAddress, string password, string numID, string phoneNum) {
@@ -57,17 +59,10 @@ const string &BankClient::getClientNumberId() const {
     return clientNumberID;
 }
 
-int BankClient::getLoanCount() const {
-    return loanCount;
-}
 
 int BankClient::getAccountCount() const {
     return accountCount;
 }
-
-/*int BankClient::getClientCreditCardCount() const {
-    return clientCreditCardCount;
-}*/
 
 void BankClient::getAccounts(Account *accountList) {
 

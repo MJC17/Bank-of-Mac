@@ -15,7 +15,7 @@ using namespace std;
 
 class Loan {
     string loanType;
-    double m_interestRate;
+    double interestRate;
     Date m_dueDate;
     double m_amountLoaned;
 
@@ -26,13 +26,13 @@ public:
 
     void setDueDate(Date due) { m_dueDate = due; };
 
-    double getInterestRate() { return m_interestRate; };
+    double getInterestRate() { return interestRate; };
 
     string getDueDate();
 
     double getAmountLoaned() { return m_amountLoaned; };
 
-    void setInterestRate(double i) { m_interestRate = i; };
+    void setInterestRate(double i) { interestRate = i; };
 
     virtual void getLoanInfo() = 0;
 

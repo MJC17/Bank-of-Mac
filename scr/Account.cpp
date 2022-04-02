@@ -57,7 +57,7 @@ string Account::transactionHistroyDatabasePrint() {
         printOut = printOut + transactions[tranIndex].toString() + "\n";
 
     }
-    
+
     return printOut;
 }
 
@@ -88,7 +88,7 @@ void Account::getAccountInfo() {
 
 string Account::printAccount() {
 
-    return accountType + "\t" + getAccountId() + "\t" + std::to_string(balance) + "\t" + openDate.toString() + "\t";
+    return getAccountType() + "\t" + getAccountId() + "\t" + std::to_string(getBalance()) + "\t" + getOpenDateString() + "\t";
 }
 
 void Account::setAccountId(const string &accountId) {
@@ -113,6 +113,8 @@ void Account::createAccountID() {
     }
 }
 
-
+string Account::getOpenDateString() const {
+    return openDate.toString();
+}
 
 
