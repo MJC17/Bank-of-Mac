@@ -11,9 +11,9 @@ using namespace std;
 
 Account::Account() {
 
-//    transactionsCount = 0;
     balance = 0.0;
     openDate = Date();
+
 }
 
 Account::Account(double currentBalance, Date openedDate, string ID) {
@@ -81,11 +81,6 @@ void Account::recalculateAccountBalance() {
     }
 }
 
-
-void Account::getAccountInfo() {
-
-}
-
 string Account::printAccount() {
 
     return getAccountType() + "\t" + getAccountId() + "\t" + std::to_string(getBalance()) + "\t" + getOpenDateString() + "\t";
@@ -115,6 +110,38 @@ void Account::createAccountID() {
 
 string Account::getOpenDateString() const {
     return openDate.toString();
+}
+
+void Account::printAccountInfo() {
+    cout << "Type\t\tID\t\t\t\tAmount\t\tOpened Date" << endl;
+
+    cout.precision(2);
+    cout << getAccountType() << "\t";
+    cout << getAccountId() << "\t\t";
+    cout << fixed << getBalance() << "\t\t";
+    cout << getOpenDateString() + "\n\n";
+
+    cout << "Transaction History:" << endl;
+    cout << "\tType\t\t\tAmount\t\tDescription\t\t\tDate of Transaction" << endl;
+
+
+    for (int tranIndex = 0; tranIndex < transactionsCount; tranIndex++) {
+
+        if (transactions[tranIndex].getTransactionType() == "Deposit") {
+            cout << "\tDeposit   ";
+
+        } else {
+            cout << "\tWithdrawal";
+        }
+
+        cout.precision(2);
+        cout << "\t\t" << fixed << transactions[tranIndex].getBalanceAmount();
+        cout << "\t\t" << transactions[tranIndex].getTransactionDesciption();
+        cout << "\t\t\t" << transactions[tranIndex].getTransactionDate() << endl;
+
+
+    }
+
 }
 
 

@@ -51,17 +51,17 @@ public:
 
     const string &getClientNumberId() const;
 
-    int getLoanCount() const;
-
     int getAccountCount() const;
-
-    int getClientCreditCardCount() const;
 
     void getAccounts(Account *accountList);
 
     void setClientNumberId(const string &clientNumberId);
 
     void addNewAccount(Account newAccount);
+
+    void printAccounts();
+
+    Account *getAccount(int index);
 
 };
 

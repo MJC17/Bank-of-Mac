@@ -100,7 +100,7 @@ void BankDatabases::loadAllData() {
                 }
             }
 
-            addNewClient(currentLoadingClient);
+            addNewClientToDatabase(currentLoadingClient);
         }
 
     } else {
@@ -156,16 +156,12 @@ void BankDatabases::saveAllData() {
 
 }
 
-void BankDatabases::addNewClient(BankClient newClient) {
+void BankDatabases::addNewClientToDatabase(BankClient newClient) {
 
     newClient.setClientNumberId(createClientNumberID());
 
     clientDataList[bankCliendCount] = newClient;
     bankCliendCount++;
-}
-
-void BankDatabases::removeClient(BankClient Client) {
-
 }
 
 string BankDatabases::createClientNumberID() {
@@ -221,4 +217,19 @@ void BankDatabases::loadAccountTransaction(Account *currentLoadingAccount, fstre
     }
 
 
+}
+
+bool BankDatabases::ValidateNewLogin(BankClient newClientCredentials) {
+
+
+    for (int i = 0; i < bankCliendCount; i++) {
+
+        if (clientDataList[i].getClientEmailAddress() == newClientCredentials.getClientEmailAddress()) {
+
+            return false;
+
+        }
+    }
+
+    return true;
 }

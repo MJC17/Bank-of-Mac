@@ -7,14 +7,14 @@
 
 Savings::Savings() : Account() {
 
-    setAccountType("Saving");
+    setAccountType("Savings");
     createAccountID();
 
 }
 
 Savings::Savings(double currentBalance, Date openedDate, string ID) : Account(currentBalance, openedDate, ID) {
 
-    setAccountType("Saving");
+    setAccountType("Savings");
     setAccountId(ID);
 }
 

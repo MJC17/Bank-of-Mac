@@ -51,14 +51,16 @@ public:
 
     void recalculateAccountBalance();
 
-    virtual void getAccountInfo();
+    virtual void printAccountInfo();
 
     const string &getAccountId() const;
 
     void setAccountId(const string &accountId);
 
+    string getOpenDateString() const;
 
     void createAccountID();
+
 
 };
 

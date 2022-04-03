@@ -89,3 +89,23 @@ BankClient::BankClient() {
 
 }
 
+void BankClient::printAccounts() {
+
+    cout << "\tID\t\t\t\tType\t\t\tBalance" << endl;
+
+    for (int accIndex = 0; accIndex < accountCount; accIndex++) {
+
+        cout.precision(2);
+        cout << accIndex + 1 << ")\t";
+        cout << clientActiveAccount[accIndex].getAccountId() + "\t\t";
+        cout << clientActiveAccount[accIndex].getAccountType() + " \t\t";
+        cout << fixed << clientActiveAccount[accIndex].getBalance() << endl;
+    }
+
+}
+
+Account *BankClient::getAccount(int index) {
+
+    return &clientActiveAccount[index - 1];
+}
+

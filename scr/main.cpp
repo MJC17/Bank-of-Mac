@@ -7,6 +7,8 @@
 #include <cstdlib>
 #include "BankDatabase.h"
 #include "BankClient.h"
+#include "Checkings.h"
+#include "Savings.h"
 
 void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase);
 
@@ -115,40 +117,152 @@ int main() {
 
 void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
 
+    cout << "Hello, " << activeClient->getClientFirstName() << " " << activeClient->getClientLastName() << endl;
+
     while (true) {
 
-        cout << "Hello, " << activeClient->getClientFirstName() << " " << activeClient->getClientLastName() << endl;
         cout << "PLEASE SELECT AN OPTION:" << endl;
-        cout << "1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View
-        cout << "2) Withdrawal" << endl; // the client can withdraw from any of their accounts
-        cout << "3) Deposit" << endl; // the client can deposit into any of their accounts
-        cout << "4) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
-        cout << "5) E-Transfer" << endl; // the client can transfer money from any of their accounts to another client at the bano
-        cout << "0) Quit" << endl << endl; // end / terminate the program
+        cout << "\t1) View Account " << endl; // client can view all of their active accounts, then pick which transaction history they want to View
+        cout << "\t2) Open New Account" << endl; // client can view all of their active accounts, then pick which transaction history they want to View
+        cout << "\t3) Withdrawal" << endl; // the client can withdraw from any of their accounts
+        cout << "\t4) Deposit" << endl; // the client can deposit into any of their accounts
+        cout << "\t5) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
+        cout << "\t6) E-Transfer" << endl; // the client can transfer money from any of their accounts to another client at the bano
+        cout << "\t0) Quit" << endl << endl; // end / terminate the program
 
         int choice2 = 0;
         cin >> choice2;
+        skip();
 
         if (choice2 == 1) {
-            //currentActiveClient->getAccounts();
+            cout << "Your Current Active Accounts:" << endl;
+            activeClient->printAccounts();
+
+            int accountIndexInput;
+            cout << endl << "Which Account do you want to view: ";
+            cin >> accountIndexInput;
+            skip();
+
+            Account *activeAccount = activeClient->getAccount(accountIndexInput);
+            activeAccount->printAccountInfo();
+            skip();
+
 
         } else if (choice2 == 2) {
-            double withdrawalAmount = 0.0;
-            cout << "From which account would you like to withdrawal?" << endl;
-            // bring up the active accounts
-            cout << "How much would you like to withdrawal?" << endl;
-            cin >> withdrawalAmount;
-            //  use .setBalance(getBalance-withdrawalAmount);
-            cout << "Amount withdrawled. Your new balance is $" <</*getBalance*/endl;
+
+            if (activeClient->getAccountCount() < 5) {
+
+                cout << "ACCOUNT TYPES AVAILABLE: " << endl;
+                cout << "\t1) Checkings Account" << endl;
+                cout << "\t2) Savings Account" << endl << endl;
+                cout << "What type of account do to want: ";
+
+                int accountChoiceInput;
+                cin >> accountChoiceInput;
+                skip();
+
+                if (accountChoiceInput == 1) {
+
+                    Checkings newAccount = Checkings();
+                    cout << "A new checkings account has been made for you." << endl;
+                    cout << "Account ID: " << newAccount.getAccountId() << endl;
+                    activeClient->addNewAccount(newAccount);
+
+
+                } else if (accountChoiceInput == 2) {
+
+                    Savings newAccount = Savings();
+                    cout << "A new savings account has been made for you." << endl;
+                    cout << "Account ID: " << newAccount.getAccountId() << endl << endl;
+                    activeClient->addNewAccount(newAccount);
+                }
+
+
+            } else {
+
+                cout << "Sorry, you have to many account open with us right now." << endl;
+                cout << "Please Call to book an appointment with one of Associates to correct this problem." << endl << endl;
+
+            }
+
+
         } else if (choice2 == 3) {
-            double depositAmount = 0.0;
-            cout << "To which account would you like to deposit?" << endl;
-            cin >> depositAmount;
-            // use .setBalance(.getBalance + depositAmount)
-            cout << "Amount deposited. Your new balance is $" <</*getBalance*/endl;
+            // bring up the active accounts
+            cout << "From which account would you like to withdrawal?" << endl;
+            activeClient->printAccounts();
+
+            int accountIndexInput;
+            cout << endl << "Account : ";
+            cin >> accountIndexInput;
+            skip();
+
+            Account *activeAccount = activeClient->getAccount(accountIndexInput);
+
+            if (activeAccount->getBalance() != 0) {
+
+                while (true) {
+
+                    cout << "How much would you like to withdrawal? (withdrawal limit: $" << activeAccount->getBalance() << ")" << endl;
+                    cout << "Amount: " << endl;
+                    double withdrawalAmount = 0.0;
+                    cin >> withdrawalAmount;
+                    skip();
+
+                    if (withdrawalAmount < activeAccount->getBalance()) {
+
+                        cout.precision(2);
+                        activeAccount->addNewTransactios(Transaction(false, withdrawalAmount, "ATM-WDRL"));
+                        cout << "Withdrawal successful! Your cash with be Delivered within 3 - 5 Business days." << endl;
+                        cout << "Your Account balance is $" << fixed << activeAccount->getBalance() << endl << endl;
+                        break;
+
+                    } else {
+                        cout << "Insufficient funds, please try again." << endl;
+                    }
+                }
+
+            } else {
+
+                cout << "Sorry, you do not have enough money in you account right now to make a withdrawal." << endl;
+
+            }
+
         } else if (choice2 == 4) {
 
+            cout << "To which account would you like to deposit?" << endl;
+            activeClient->printAccounts();
+
+            int accountIndexInput;
+            cout << endl << "Account : ";
+            cin >> accountIndexInput;
+            skip();
+
+            Account *activeAccount = activeClient->getAccount(accountIndexInput);
+
+            while (true) {
+
+                cout << "How much would you like to deposit? (deposit limit: $999.99)" << endl;
+                cout << "Amount: " << endl;
+                double depositAmount = 0.0;
+                cin >> depositAmount;
+                skip();
+
+                if (depositAmount < 999.99) {
+
+                    cout.precision(2);
+                    activeAccount->addNewTransactios(Transaction(true, depositAmount, "ATM-DEPOS"));
+                    cout << "Deposit successful! Your Account balance is $" << fixed << activeAccount->getBalance() << endl << endl;
+                    break;
+
+                } else {
+                    cout << "Exceeded deposit limit, please try again." << endl;
+
+                }
+            }
+
         } else if (choice2 == 5) {
+
+        } else if (choice2 == 6) {
 
         } else if (choice2 == 0) {
             cout << "Thank you for using Bank of Mac, have a great day" << endl;

@@ -7,7 +7,7 @@
 
 Transaction::Transaction() {}
 
-Transaction::Transaction(bool isDeposit, double amount, string description, Date transDate) {
+Transaction::Transaction(bool isDeposit, double amount, string description) {
 
     if (isDeposit) {
 
@@ -21,7 +21,24 @@ Transaction::Transaction(bool isDeposit, double amount, string description, Date
     }
 
     transactionDescription = description;
+    transactionDate = Date();
 
+}
+
+Transaction::Transaction(bool isDeposit, double amount, string description, Date transDate) {
+    if (isDeposit) {
+
+        transactionType = "Deposit";
+        balanceAmount = amount;
+
+    } else {
+        transactionType = "Withdrawal";
+        balanceAmount = amount * -1;
+
+    }
+
+    transactionDescription = description;
+    transactionDate = transDate;
 }
 
 
@@ -60,5 +77,4 @@ void Transaction::setTransactionDesciption(const string &transactionDesciption) 
 string Transaction::toString() {
     return transactionType + "\t" + std::to_string(balanceAmount) + "\t" + transactionDescription + "\t" + getTransactionDate();
 }
-
 
