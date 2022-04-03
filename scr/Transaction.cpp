@@ -3,6 +3,7 @@
 //
 
 #include "Transaction.h"
+#include <cmath>
 
 
 Transaction::Transaction() {}
@@ -12,11 +13,11 @@ Transaction::Transaction(bool isDeposit, double amount, string description) {
     if (isDeposit) {
 
         transactionType = "Deposit";
-        balanceAmount = amount;
+        balanceAmount = abs(amount);
 
     } else {
         transactionType = "Withdrawal";
-        balanceAmount = amount * -1;
+        balanceAmount = abs(amount) * -1;
 
     }
 
@@ -26,14 +27,14 @@ Transaction::Transaction(bool isDeposit, double amount, string description) {
 }
 
 Transaction::Transaction(bool isDeposit, double amount, string description, Date transDate) {
-    if (isDeposit) {
 
+    if (isDeposit) {
         transactionType = "Deposit";
-        balanceAmount = amount;
+        balanceAmount = abs(amount);
 
     } else {
         transactionType = "Withdrawal";
-        balanceAmount = amount * -1;
+        balanceAmount = abs(amount) * -1;
 
     }
 

@@ -1,35 +1,35 @@
 2
-Marcus	Cameron	Test	Test	1628677010	3234232	
+Marcus	Cameron	Test	Test	1740962260	3234232	
 3
-Checking	C-22333149	974.000000	30/3/2022	
+Checking	C-22333149	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	30/3/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022
-Checking	C-36168553	974.000000	30/3/2022	
+Checking	C-36168553	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	3/4/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022
-Checking	C-74405294	974.000000	30/3/2022	
+Checking	C-74405294	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	3/4/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022
-Admin	Admin	Admin	Test	5476999719	3234232	
+Admin	Admin	Admin	Test	1016641776	3234232	
 3
-Checking	C-92901815	974.000000	30/3/2022	
+Checking	C-92901815	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	3/4/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022
-Checking	C-62263490	974.000000	30/3/2022	
+Checking	C-62263490	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	3/4/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022
-Checking	C-92382112	974.000000	30/3/2022	
+Checking	C-92382112	878.000000	30/3/2022	
 3
 Deposit	9.000000	E-Transfer	3/4/2022
-Withdrawal	48.000000	E-Transfer	3/4/2022
+Withdrawal	-48.000000	E-Transfer	3/4/2022
 Deposit	917.000000	Transfer	3/4/2022

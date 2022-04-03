@@ -127,7 +127,6 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
         cout << "\t3) Withdrawal" << endl; // the client can withdraw from any of their accounts
         cout << "\t4) Deposit" << endl; // the client can deposit into any of their accounts
         cout << "\t5) Transfer" << endl; // the client can transfer money from any of their accounts into another account that they own
-        cout << "\t6) E-Transfer" << endl; // the client can transfer money from any of their accounts to another client at the bano
         cout << "\t0) Quit" << endl << endl; // end / terminate the program
 
         int choice2 = 0;
@@ -262,17 +261,89 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
 
         } else if (choice2 == 5) {
 
-        } else if (choice2 == 6) {
+            if (activeClient->getAccountCount() > 1) {
+
+                cout << "Your Current Active Accounts:" << endl;
+                activeClient->printAccounts();
+                skip();
+
+                int accountIndexInput;
+
+                cout << "From which account would you like to send money from?" << endl;
+                cout << "Account : ";
+                cin >> accountIndexInput;
+                skip();
+
+                Account *sendingAccount = activeClient->getAccount(accountIndexInput);
+
+                while (true) {
+
+                    cout << "From which account would you like to send money too?" << endl;
+                    cout << "Account : ";
+                    cin >> accountIndexInput;
+                    skip();
+
+                    Account *receivingAccount = activeClient->getAccount(accountIndexInput);
+
+
+                    if (sendingAccount != receivingAccount) {
+
+                        while (true) {
+
+                            if (sendingAccount->getBalance() < 999.99) {
+                                cout << "How much would you like to transfer? (limit: $" << receivingAccount->getBalance() << ")" << endl;
+
+                            } else {
+                                cout << "How much would you like to transfer? (limit: $999.99)" << endl;
+                            }
+
+                            cout << "Amount: ";
+                            double amount = 0.0;
+                            cin >> amount;
+                            skip();
+
+                            if (amount < 999.99 && amount < sendingAccount->getBalance()) {
+
+                                sendingAccount->addNewTransactios(Transaction(false, amount, "Transfer"));
+                                receivingAccount->addNewTransactios(Transaction(true, amount, "Transfer"));
+                                cout << "Transfer successful! Go to 'View Accounts' to see account balances" << endl << endl;
+                                break;
+
+                            } else {
+
+                                cout << "Error: Exceeded transfer limit or Insufficient funds." << endl;
+                                cout << "Please try again." << endl << endl;
+
+                            }
+                        }
+
+                        break;
+
+                    } else {
+
+                        cout << "Error: Selected the same account, please try again." << endl << endl;
+                    }
+                }
+
+            } else {
+
+                cout << "You currently do not have enough accounts to make a transfer (minimum of 2 accounts)." << endl;
+                cout << "To open another account, please go to 'Open New Account'" << endl;
+
+
+            }
+
 
         } else if (choice2 == 0) {
             cout << "Thank you for using Bank of Mac, have a great day" << endl;
-            activeDatabase->saveAllData();
             break;
 
         } else {
             cout << "Invalid selection. Try again!" << endl;
             cin >> choice2;
         }
+
+//        activeDatabase->saveAllData();
     }
 }
 
