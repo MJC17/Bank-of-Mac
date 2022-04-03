@@ -64,16 +64,6 @@ int BankClient::getAccountCount() const {
     return accountCount;
 }
 
-void BankClient::getAccounts(Account *accountList) {
-
-    for (int accIndex = 0; accIndex < accountCount; accIndex++) {
-
-        accountList[accIndex] = clientActiveAccount[accIndex];
-
-    }
-
-}
-
 void BankClient::setClientNumberId(const string &clientNumberId) {
     clientNumberID = clientNumberId;
 }

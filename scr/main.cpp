@@ -97,7 +97,7 @@ int main() {
 
             BankClient newClient = BankClient(fnameInput, lnameInput, emailInput, passwordInput, phoneInput);
 
-            if (database.ValidateNewLogin(newClient)) {
+            if (database.ValidateNewLogin(&newClient)) {
 
                 database.addNewClientToDatabase(newClient);
                 break;
@@ -202,7 +202,7 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                 while (true) {
 
                     cout << "How much would you like to withdrawal? (withdrawal limit: $" << activeAccount->getBalance() << ")" << endl;
-                    cout << "Amount: " << endl;
+                    cout << "Amount: ";
                     double withdrawalAmount = 0.0;
                     cin >> withdrawalAmount;
                     withdrawalAmount = abs(withdrawalAmount);
@@ -242,7 +242,7 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
             while (true) {
 
                 cout << "How much would you like to deposit? (deposit limit: $999.99)" << endl;
-                cout << "Amount: " << endl;
+                cout << "Amount: ";
                 double depositAmount = 0.0;
                 cin >> depositAmount;
                 skip();
@@ -336,12 +336,11 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                 cout << "You currently do not have enough accounts to make a transfer (minimum of 2 accounts)." << endl;
                 cout << "To open another account, please go to 'Open New Account'" << endl;
 
-
             }
-
 
         } else if (choice2 == 0) {
             cout << "Thank you for using Bank of Mac, have a great day" << endl;
+            activeDatabase->saveAllData();
             break;
 
         } else {
@@ -349,7 +348,7 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
             cin >> choice2;
         }
 
-//        activeDatabase->saveAllData();
+        activeDatabase->saveAllData();
     }
 }
 

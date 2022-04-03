@@ -23,14 +23,13 @@ public:
 
     BankClient *getVerifedBankClient(string emailAddress, string password);
 
-    bool ValidateNewLogin(BankClient newClientCredentials);
+    bool ValidateNewLogin(BankClient *newClientCredentials);
 
     void loadAllData();
 
     void saveAllData();
 
     void addNewClientToDatabase(BankClient newClient);
-
 
     void loadAccountTransaction(Account *currentLoadingAccount, fstream *OUTFILE);
 

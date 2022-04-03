@@ -116,7 +116,7 @@ void Account::printAccountInfo() {
     cout << "Type\t\tID\t\t\t\tAmount\t\tOpened Date" << endl;
 
     cout.precision(2);
-    cout << getAccountType() << "\t";
+    cout << getAccountType() << " \t";
     cout << getAccountId() << "\t\t";
     cout << fixed << getBalance() << "\t\t";
     cout << getOpenDateString() + "\n\n";
@@ -138,7 +138,6 @@ void Account::printAccountInfo() {
         cout << "\t\t" << fixed << transactions[tranIndex].getBalanceAmount();
         cout << "\t\t" << transactions[tranIndex].getTransactionDesciption();
         cout << "\t\t\t" << transactions[tranIndex].getTransactionDate() << endl;
-
 
     }
 

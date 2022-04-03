@@ -6,10 +6,10 @@
 #include <fstream>
 #include "BankDatabase.h"
 #include "Checkings.h"
+#include "Savings.h"
 
 BankDatabases::BankDatabases() {
 
-//    cout << "Testing" << endl;
     srand(time(0));
 
     loadAllData();
@@ -91,12 +91,22 @@ void BankDatabases::loadAllData() {
 
                     Checkings currentLoadingAccount = Checkings(balance, Date(openDate), currentAccountID);
                     loadAccountTransaction(&currentLoadingAccount, &DataFile);
-
+//
                     currentLoadingClient.addNewAccount(currentLoadingAccount);
 
                 } else if (currentAccountType == "Savings") {
 
+                    string openDate, currentAccountID;
+                    double balance;
 
+                    DataFile >> currentAccountID;
+                    DataFile >> balance;
+                    DataFile >> openDate;
+
+                    Savings currentLoadingAccount = Savings(balance, Date(openDate), currentAccountID);
+                    loadAccountTransaction(&currentLoadingAccount, &DataFile);
+
+                    currentLoadingClient.addNewAccount(currentLoadingAccount);
                 }
             }
 
@@ -134,15 +144,13 @@ void BankDatabases::saveAllData() {
 
             DataFile << clientDataList[clientIndex].getAccountCount() << endl;
 
-            Account clientAccounts[clientDataList[clientIndex].getAccountCount()];
-            clientDataList[clientIndex].getAccounts(clientAccounts);
-
             for (int accIndex = 0; accIndex < clientDataList[clientIndex].getAccountCount(); accIndex++) {
 
-                DataFile << clientAccounts[accIndex].printAccount() << endl;
-                DataFile << clientAccounts[accIndex].getTransactionsCount() << endl;
+                Account *f = clientDataList[clientIndex].getAccount(accIndex + 1);
 
-                DataFile << clientAccounts[accIndex].transactionHistroyDatabasePrint();
+                DataFile << f->printAccount() << endl;
+                DataFile << f->getTransactionsCount() << endl;
+                DataFile << f->transactionHistroyDatabasePrint();
 
             }
 
@@ -157,8 +165,6 @@ void BankDatabases::saveAllData() {
 }
 
 void BankDatabases::addNewClientToDatabase(BankClient newClient) {
-
-    newClient.setClientNumberId(createClientNumberID());
 
     clientDataList[bankCliendCount] = newClient;
     bankCliendCount++;
@@ -194,24 +200,23 @@ void BankDatabases::loadAccountTransaction(Account *currentLoadingAccount, fstre
     int transCount;
     *OUTFILE >> transCount;
 
-    for (int tranIndex = 0; tranIndex < 3; tranIndex++) {
+    for (int tranIndex = 0; tranIndex < transCount; tranIndex++) {
 
-        string transType, discript, date;
+        string transType, description, date;
         double transAmount;
 
         *OUTFILE >> transType;
         *OUTFILE >> transAmount;
-        *OUTFILE >> discript;
+        *OUTFILE >> description;
         *OUTFILE >> date;
 
         if (transType == "Deposit") {
 
-            currentLoadingAccount->addNewTransactios(Transaction(true, transAmount, discript, Date(date)));
-
+            currentLoadingAccount->addNewTransactios(Transaction(true, transAmount, description, Date(date)));
 
         } else {
 
-            currentLoadingAccount->addNewTransactios(Transaction(false, transAmount, discript, Date(date)));
+            currentLoadingAccount->addNewTransactios(Transaction(false, transAmount, description, Date(date)));
 
         }
     }
@@ -219,12 +224,13 @@ void BankDatabases::loadAccountTransaction(Account *currentLoadingAccount, fstre
 
 }
 
-bool BankDatabases::ValidateNewLogin(BankClient newClientCredentials) {
+bool BankDatabases::ValidateNewLogin(BankClient *newClientCredentials) {
 
+    newClientCredentials->setClientNumberId(createClientNumberID());
 
     for (int i = 0; i < bankCliendCount; i++) {
 
-        if (clientDataList[i].getClientEmailAddress() == newClientCredentials.getClientEmailAddress()) {
+        if (clientDataList[i].getClientEmailAddress() == newClientCredentials->getClientEmailAddress()) {
 
             return false;
 

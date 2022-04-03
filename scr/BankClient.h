@@ -51,8 +51,6 @@ public:
 
     int getAccountCount() const;
 
-    void getAccounts(Account *accountList);
-
     void setClientNumberId(const string &clientNumberId);
 
     void addNewAccount(Account newAccount);
