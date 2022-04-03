@@ -205,6 +205,7 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                     cout << "Amount: " << endl;
                     double withdrawalAmount = 0.0;
                     cin >> withdrawalAmount;
+                    withdrawalAmount = abs(withdrawalAmount);
                     skip();
 
                     if (withdrawalAmount < activeAccount->getBalance()) {
@@ -245,6 +246,9 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                 double depositAmount = 0.0;
                 cin >> depositAmount;
                 skip();
+
+                depositAmount = abs(depositAmount);
+
 
                 if (depositAmount < 999.99) {
 
@@ -291,7 +295,7 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                         while (true) {
 
                             if (sendingAccount->getBalance() < 999.99) {
-                                cout << "How much would you like to transfer? (limit: $" << receivingAccount->getBalance() << ")" << endl;
+                                cout << "How much would you like to transfer? (limit: $" << sendingAccount->getBalance() << ")" << endl;
 
                             } else {
                                 cout << "How much would you like to transfer? (limit: $999.99)" << endl;
@@ -301,6 +305,8 @@ void userLoggedIn(BankClient *activeClient, BankDatabases *activeDatabase) {
                             double amount = 0.0;
                             cin >> amount;
                             skip();
+
+                            amount = abs(amount);
 
                             if (amount < 999.99 && amount < sendingAccount->getBalance()) {
 
